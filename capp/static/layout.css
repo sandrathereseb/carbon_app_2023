@@ -1,0 +1,83 @@
+/* Colors */
+/* Rainy theme 5 -Green Digitalization Course and Students Apps-:
+Navbar (background): #f0efef
+Navbar (a hover): #ddeedd
+Navbar (logo): #c2d4dd
+Navbar (a menu): #2a4359
+Footer (background): #b0aac0
+*/
+
+@import url('https://fonts.googleapis.com/css2?family=Aboreto&display=swap');
+
+/* CSS utilities */
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    font-family: 'Aboreto', cursive;
+    line-height: 1, 8;
+}
+
+.container {
+    margin: 0;
+    max-width: 1380px;
+    padding: 0;
+}
+
+ul {
+    list-style: none;
+}
+
+/* Navbar */
+.section_navbar {
+    background-color: #E4A58F;
+}
+.navbar {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    height: 90px;
+    align-items: center;
+    background-color: #E4A58F;
+    padding: 0px;
+}
+
+.navbar a {
+    color: #ECF87F;
+    padding: 10px 20px;
+    margin: 0 2px;
+    font-size: 22px;
+    text-decoration: none;
+}
+
+.navbar a:hover {
+    border-bottom: #ddeedd 3px solid;
+}
+
+.navbar ul {
+    display: flex;
+}
+
+.navbar .logo {
+    font-weight: 500;
+    
+}
+
+.text-logo {
+    color: #97D49B;
+}
+
+/* Media Query */
+@media(max-width: 768px) {
+    .navbar {
+        height: 160px;
+        flex-direction: column;
+    }
+
+    .navbar ul {
+        flex-direction: column;
+    }
+}
