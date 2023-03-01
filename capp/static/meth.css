@@ -49,6 +49,24 @@
     margin-left: 20px;
     margin-top: 3px;
 }
-.sssssss{
-    width: 60px;
+.methbutton{
+    height: 70px;
+    width: 280px;
+    border-radius: 4px;
+    background-color: blueviolet;
+    outline-width: 3px;
+    outline-color: blueviolet;
+    outline-style: solid;
+    color: floralwhite;
+    align-items:center;
+    justify-content:center;
+    display: flex;
+    font-size: 30px;
+    font-weight: bolder;
+    text-align: center;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+.aisdumb{
+    color: white;
+    text-decoration: none;
 }
