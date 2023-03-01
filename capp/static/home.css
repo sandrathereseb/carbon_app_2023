@@ -152,16 +152,16 @@ p { /* change this to a class from global attribute */
 
 
 .pfp {
-  height: 200px;
-  width: 200px;
+  height: 250px;
+  width: 250px;
+  border-radius: 50%;
 }
 
 .person {
   display: flex;
   flex-direction: column;
-  width: 300px;
-  height: 400px;
- 
+  width: 350px;
+  height: 500px;
   background-color: #F7C9B6;
   outline-width: 5px;
   outline-color:#83BDC0;
@@ -173,7 +173,7 @@ p { /* change this to a class from global attribute */
   position: relative;
   margin: 10px;
   border-radius: 10px;
-
+margin-top: 20px;
 }
 
 .dev {
@@ -271,4 +271,5 @@ a:link{
 .iconimg{
   width:325; 
   height:325;
+  border-radius: 25%;
 }
