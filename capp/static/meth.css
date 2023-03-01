@@ -1,9 +1,7 @@
 .allencomp{
     width: 600px;
     height: fit-content;
-    outline: 3px;
-    outline-style: solid;
-    outline-color: blue;
+
     padding: 15px;
     margin: 10px;
 }
@@ -27,6 +25,7 @@
 }
 .drop:hover{
     background-color: rgb(122, 179, 122);
+    cursor: pointer;
 }
 
 .inside{
@@ -49,10 +48,13 @@
     margin-left: 20px;
     margin-top: 3px;
 }
+.sssssss{
+    width: 60px;
+}
 .methbutton{
-    height: 70px;
+    height: 80px;
     width: 280px;
-    border-radius: 4px;
+    border-radius: 8px;
     background-color: blueviolet;
     outline-width: 3px;
     outline-color: blueviolet;
@@ -66,7 +68,13 @@
     text-align: center;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
+.methbutton:hover{
+    cursor: pointer;
+}
 .aisdumb{
     color: white;
     text-decoration: none;
 }
+body::-webkit-scrollbar {
+    display: none;
+  }
