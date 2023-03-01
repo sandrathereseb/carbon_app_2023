@@ -28,6 +28,9 @@ ul {
   list-style: none;
   font-size: 400;
 }
+li {
+  margin-top: 10px;
+}
 a {
   color: #333;
   text-decoration: none;
@@ -55,6 +58,7 @@ img {
   align-items: center;
   background-color: #8bbbd9;
   padding: 0 0px;
+
 }
 .carbon_app_navbar a {
   color: #2a4359;
@@ -110,3 +114,32 @@ img {
     border-bottom: #2a4359 2px solid;
   }
 }
+.lastones{
+  z-index: 100;
+  display: flex;
+  right: 0px;
+  top: 0px;
+  position: absolute;
+  flex-direction: row;
+}
+.last2{
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  height: 70px;
+  align-items: center;
+  background-color: #8bbbd9;
+  padding: 0 0px;
+}
+.last2 a {
+  color: #2a4359;
+  padding: 10px 20px;
+  margin: 0 5px;
+  font-size: 20px;
+  text-decoration: none;
+}
+.last2 a:hover{
+  border-bottom: #2a4359 4px solid;
+}
+
+

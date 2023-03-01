@@ -49,12 +49,6 @@
               <nav>
                 <ul>
                     <li>
-                      <a href="{{url_for('users.register')}}">Register</a>
-                    </li>
-                    <li>
-                      <a href="{{url_for('users.login')}}">Login</a>
-                    </li>
-                    <li>
                         <a href="{{url_for('home.home_home')}}">Home</a>
                     </li>
                     <li>
@@ -66,9 +60,17 @@
                 </ul>
               </nav> 
             </div>
+
           </div>
         </section>
-
+        <div class="lastones">
+          <div class="last2">
+            <a href="{{url_for('users.register')}}">Register</a>
+          </div>
+          <div class="last2">
+            <a href="{{url_for('users.login')}}">Login</a>
+          </div>
+        </div>
         {% block content %} {% endblock %}
 
         <section class="section_footer">
