@@ -1,0 +1,122 @@
+.kekww{
+    margin-left: 20%;
+}
+
+
+.pfp {
+    height: 200px;
+    width: 200px;
+}
+
+.person {
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+    height: 400px;
+   
+    background-color: #F7C9B6;
+    outline-width: 5px;
+    outline-color:#83BDC0;
+    outline-style: solid;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    align-items: center;
+    position: relative;
+    margin: 10px;
+    border-radius: 10px;
+
+}
+
+.dev {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    justify-content: center;
+}
+
+.cringe {
+    margin-left: 100px;
+    padding-left: 100px;
+
+}
+
+.butnnn {
+    position: absolute;
+    bottom: 5px;
+    height: 30px;
+    width: 90px;
+    background-color: #83BDC0;
+    color: white;
+    border-radius: 8px;
+    border-color: #dc4f12;
+    border-style: solid;
+}
+
+.butnnn:hover {
+    background-color: crimson;
+}
+
+.Ptext {
+    margin-left: 5%;
+    margin-right: 5%;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin-top: 5px;
+}
+
+h2 {
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bold;
+}
+
+.topstuff {
+    margin-left: 10px;
+
+}
+
+.helpme {
+    margin: 10px;
+    padding: 10px;
+}
+
+.xdd {
+    outline: 5px;
+    outline-width: 2px;
+    outline-style: solid;
+    outline-color: red;
+}
+
+.ss {
+    margin-left: 5px;
+    outline: 5px;
+    outline-width: 2px;
+    outline-style: solid;
+    outline-color: blue;
+}
+.angryface{
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    text-align: center;
+    width: 90px;
+    height: 40px;
+    margin-left: auto;
+    margin-right: auto;
+    outline: 3px;
+    background-color: darkblue;
+    justify-content: center;
+    bottom: 0;
+    border-radius: 5px;
+    right: 0;
+}
+.noplz{
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-weight: bold;
+    color: white;
+}
+a:link{
+    text-decoration: none;
+}

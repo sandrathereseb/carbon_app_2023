@@ -1,0 +1,54 @@
+.allencomp{
+    width: 600px;
+    height: fit-content;
+    outline: 3px;
+    outline-style: solid;
+    outline-color: blue;
+    padding: 15px;
+    margin: 10px;
+}
+
+.drop{
+    width: 200px;
+    height: 50px;
+    outline-style: solid;
+    outline-width: 4px;
+    outline-color: rgb(122, 179, 122);
+    background-color: rgb(119, 224, 124);
+    margin: 30px;
+    text-align: center;
+    display: flex;
+    justify-content: center; /* Align horizontal */
+    align-items: center; /* Align vertical */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: larger;
+    font-weight: bold;
+    border-radius: 8px;
+}
+.drop:hover{
+    background-color: rgb(122, 179, 122);
+}
+
+.inside{
+    margin-left: 30px;
+    width: 500px;
+    font-size: larger;
+}
+.linkelink{
+    text-decoration: none;
+    color: blue;
+    font-weight: bolder;
+    text-transform: uppercase;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+.encomp_allencomp{
+    display: flex;
+    flex-direction: row;
+}
+.pedf{
+    margin-left: 20px;
+    margin-top: 3px;
+}
+.sssssss{
+    width: 50px;
+}
