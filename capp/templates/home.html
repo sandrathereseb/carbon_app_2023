@@ -6,110 +6,101 @@
   <div class="container">
 
     <div class="header_home">
-      <div class="box"> 
+      <div class="box">
 
         <!-- Flash message, user created -->
         {% with messages = get_flashed_messages(with_categories=true) %}
-            {% if messages %}
-                {% for category, message in messages %}
-                    <div class="alert alert-{{ category }}">
-                        {{ message }}
-                    </div> 
-                {% endfor %}
-            {% endif %}
+        {% if messages %}
+        {% for category, message in messages %}
+        <div class="alert alert-{{ category }}">
+          {{ message }}
+        </div>
+        {% endfor %}
+        {% endif %}
         {% endwith %}
 
         <h1 style="font-size:55px;"><span class="text-logo"> Home</span></h1>
         <p style="text-align:left;">
-            God morgen sandra. nå regner det snart slik at du blir lei deg :( velkommen til bergen 
+          Welcome to our carbon app, please put some more text here we need to fill some space
         </p>
         <div class="container_buttons_links_header_home">
           <div class="btn">
-              <a href="{{url_for('users.register')}}" class="btn btn-primary btn-lg mr-2", style="background-color:#007bff;">Register</a>
+            <a href="{{url_for('users.register')}}" class="btn btn-primary btn-lg mr-2" ,
+              style="background-color:#007bff;">Register</a>
           </div>
           <div class="btn">
-              <a href="{{url_for('users.login')}}" class="btn btn-primary btn-lg mr-2", style="background-color:#007bff;">Login</a>
+            <a href="{{url_for('users.login')}}" class="btn btn-primary btn-lg mr-2" ,
+              style="background-color:#007bff;">Login</a>
           </div>
-        </div>  
+        </div>
       </div>
       <div class="box">
-        <img 
-          src="{{url_for('static', filename='icons/carbon_app.svg')}}"
-          width="325" 
-          height="325"
-          alt=""/>
+        <img class="iconimg" src="{{url_for('static', filename='home.gif')}}" />
       </div>
     </div>
 
   </div>
-</section> 
+</section>
 
 <!-- Developers -->
-<section class="section_developers">
-  <div class="container">
+<div class="dev">
 
-    <div class="developers" style="display:block;">
-      <h1 style="text-align:center;"> Our Team</h1>
-      <p>
-        Our team of economists and developers ... Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quia, ut? Praesentium quidem sunt perspiciatis doloremque fugiat nesciunt quaerat ullam, pariatur iure unde ratione ipsum adipisci repellendus, repudiandae hic sit, temporibus molestias corrupti aut soluta sequi! Architecto deleniti expedita nisi repudiandae enim eum quas odit facilis placeat neque porro, animi incidunt consectetur. Maiores ab saepe tempora, iure asperiores beatae suscipit cum ipsum, rerum doloremque reprehenderit dolorum debitis, aliquam quasi. Maiores corporis fuga quasi nesciunt dolor iste, inventore necessitatibus unde!
-      </p>      
-    </div>
+  <div class="person">
+    <h2>Rune</h2>
+    <img class="pfp" src="static/cookie.jpg" alt="Picture of Rune">
 
-    <div class="developers">
-        <div class="box">
-          <img src="https://randomuser.me/api/portraits/men/10.jpg" alt="" style="border-radius: 50%; width:200px;">
-          <h3>Developer 1</h3>
-          <p>  Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla quia repellat omnis? Odit enim hic atque dolorem iste natus inventore perspiciatis vitae dolore animi veritatis aut nemo unde similique, officia reiciendis ex architecto voluptates soluta ab tempore facilis quisquam cum.
-          </p>
-          <div class="section_container_buttons_developers">
-            <a class="btn_developers" href="#"  target="_blank">Curriculum</a>
-          </div> 
-        </div>
-        <div class="box">
-          <img src="https://randomuser.me/api/portraits/women/11.jpg" alt="" style="border-radius: 50%; width:200px;">
-          <h3>Developer 2</h3>
-          <p>  Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla quia repellat omnis? Odit enim hic atque dolorem iste natus inventore perspiciatis vitae dolore animi veritatis aut nemo unde similique, officia reiciendis ex architecto voluptates soluta ab tempore facilis quisquam cum.
-          </p>
-          <div class="section_container_buttons_developers">
-            <a class="btn_developers" href="#"  target="_blank">Curriculum</a>
-          </div> 
-        </div>           
-        <div class="box">
-          <img src="https://randomuser.me/api/portraits/men/12.jpg" alt="" style="border-radius: 50%; width:200px;">
-          <h3>Developer 3</h3>
-          <p>  Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla quia repellat omnis? Odit enim hic atque dolorem iste natus inventore perspiciatis vitae dolore animi veritatis aut nemo unde similique, officia reiciendis ex architecto voluptates soluta ab tempore facilis quisquam cum.
-          </p>
-          <div class="section_container_buttons_developers">
-            <a class="btn_developers" href="#"  target="_blank">Curriculum</a>
-          </div> 
-        </div>     
-    </div>
+    <p class="Ptext">
+      I take the bus a lot so i am kind of an expert in this field :)
+    </p>
+    <input class="butnnn" type="button" value="Credentials">
+  </div>
+  <div class="person">
+    <h2>Nathan</h2>
+    <img class="pfp" src="static/photo1.jpg" alt="Picture of Nathan">
 
-    <div class="developers">
-      <div class="box2">
-        <img src="https://randomuser.me/api/portraits/women/12.jpg" alt="" style="border-radius: 50%; width:200px;">
-        <h3>Developer 4</h3>
-        <p>  Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla quia repellat omnis? Odit enim hic atque dolorem iste natus inventore perspiciatis vitae dolore animi veritatis aut nemo unde similique, officia reiciendis ex architecto voluptates soluta ab tempore facilis quisquam cum.
-        </p>
-        <div class="section_container_buttons_developers">
-          <a class="btn_developers" href="#"  target="_blank">Curriculum</a>
-        </div> 
-      </div>
-      <div class="box2">
-        <img src="https://randomuser.me/api/portraits/women/13.jpg" alt="" style="border-radius: 50%; width:200px;">
-        <h3>Developer 5</h3>
-        <p>  Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla quia repellat omnis? Odit enim hic atque dolorem iste natus inventore perspiciatis vitae dolore animi veritatis aut nemo unde similique, officia reiciendis ex architecto voluptates soluta ab tempore facilis quisquam cum.
-        </p>
-        <div class="section_container_buttons_developers">
-          <a class="btn_developers" href="#"  target="_blank">Curriculum</a>
-        </div> 
-      </div>           
-      <div class="box2">
+    <p class="Ptext">
+      Hello guys
+    </p>
+    <input class="butnnn" type="button" value="Credentials">
+  </div>
+  <div class="person">
+    <h2>Eilie</h2>
+    <img class="pfp" src="static/Eilie.png" alt="Picture of Eilie">
 
-      </div>     
+    <p class="Ptext">
+      hei
+    </p>
+    <input class="butnnn" type="button" value="Credentials">
+  </div>
+  <div class="person">
+    <h2>Sondre</h2>
+    <img class="pfp" src="static/aa02.jpg" alt="Picture of Sondre">
+
+    <p class="Ptext">
+      Hei jeg heter sondre, Norgesmester i koding og studentassistent her på HVL uten meg sliter Mario noe
+      jææææææævlig
+    </p>
+    <input type="button" class="butnnn" value="Credentials">
+  </div>
+  <div class="person">
+    <h2>Sandra</h2>
+    <div id="res"></div>
+    <img class="pfp" src="static/sandra.jpg" alt="Picture of Sandra">
+
+    <p class="Ptext">
+      Hjelp
+    </p>
+    <input class="butnnn" type="button" value="Credentials">
+  </div>
+  <div class="person">
+    <h2>Sander</h2>
+    <img class="pfp" src="static/IMG_0468.jpg" alt="Picture of Sander">
+
+    <p class="Ptext">
+      Snasige saker mann
+    </p>
+    <input class="butnnn" type="button" value="Credentials">
   </div>
 
-  </div>          
-</section>
-        
+</div>
 {% endblock content %}
