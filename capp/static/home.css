@@ -1,9 +1,3 @@
-/* Colors 
-Home, section 1 (head, background): #9fa7bf
-Home, section 1 (head, boxes): #568c63
-Home, section 2 (developers, background): #c5c8d9 
-Home, section 2 (developers, boxes): #49736f
- */
 
 /* Utilities  */
 p { /* change this to a class from global attribute */
@@ -12,16 +6,16 @@ p { /* change this to a class from global attribute */
 }
 /* Section header_home */
 .section_header_home {
-  background-color:#9fa7bf;
+  background-color:#899cc4;
 }
 .header_home {
   display: flex;  
   align-items: start;
-  background: #9fa7bf;
+  background: #899cc4;
 }
 .header_home .box {
   flex: 1;
-  background: #9fa7bf;
+  background: #899cc4;
   color: #fff;
   border-radius: 10px;
   margin: 20px 10px;
@@ -43,25 +37,27 @@ p { /* change this to a class from global attribute */
   flex-wrap:wrap;
 }
 .container_buttons_links_header_home a:hover {
-  color: #9fa7bf;
+  background-color: #349370;
 }
 .container_buttons_links_header_home btn {
   width: 100px;
   height: 100px;
-  background: #9fa7bf;
-  color: #fff;
+  background: #349370;
+  color: #349370;
   display: flex;
   justify-content:center;
   align-items:center;
 }
 /* Section developers */
+
+
 .section_developers {
-  background-color:#c5c8d9;
+  background-color:#899cc4;
 }
 .developers {
   display: flex;  
   align-items: start;
-  background: #c5c8d9;
+  background: #899cc4;
 }
 .developers .box {
   flex: 1;
@@ -162,7 +158,7 @@ p { /* change this to a class from global attribute */
   flex-direction: column;
   width: 350px;
   height: 500px;
-  background-color: #F7C9B6;
+  background-color: #899cc4;
   outline-width: 5px;
   outline-color:#83BDC0;
   outline-style: solid;
@@ -197,15 +193,15 @@ margin-top: 20px;
   bottom: 5px;
   height: 30px;
   width: 90px;
-  background-color: #83BDC0;
+  background-color: #8bcb8f;
   color: white;
   border-radius: 8px;
-  border-color: #dc4f12;
+  border-color: #349370;
   border-style: solid;
 }
 
 .butnnn:hover {
-  background-color: crimson;
+  background-color: #349370;
 }
 
 .Ptext {
@@ -242,7 +238,7 @@ h2 { /* change this to a class from global attribute */
   outline: 5px;
   outline-width: 2px;
   outline-style: solid;
-  outline-color: blue;
+  outline-color: #349370;
 }
 .angryface{
   display: flex;
