@@ -11,13 +11,12 @@ Navbar (a menu): white
 
 /* CSS utilities */
 *{
-  box-sizing: border-box;
   padding: 0;
   margin: 0;
 }
 body {
   font-family: 'Roboto', sans-serif;
-  background: #fff;
+  background-color: #DADADA;
   line-height: 1.6;
 }
 .container {
