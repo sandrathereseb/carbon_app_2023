@@ -1,73 +1,120 @@
 {% extends "layout.html" %}
 {% block content %}
-  
+
 <!-- Header -->
 <section class="section_header_methodology">
-    <div class="container">
-  
-      <div class="header">
-        <div class="box"> 
-          <h1 style="font-size:55px;"><span class="text-logo"> Methodology</span></h1>
-          <p style="text-align:left;">
-      Our carbon calculator uses mathematical formulas from different sources. To calculate your carbon emission, you have to know the distance you travel per day, week, month or year. This calculator is using the target units kilometers and liters, and european standards of carbon emission. 
-          </p>
-          <div class="container_buttons_links_header">
-            <div class="btn">
-                <a href="static/methodology_placeholder.pdf" target="_blank"class="btn btn-primary btn-lg mr-2", style="background-color:#007bff;">Paper</a>
-            </div>
-            <div class="btn">
-                <a href="{{url_for('carbon_app.carbon_app_home')}}" class="btn btn-primary btn-lg mr-2", style="background-color:#007bff;">Carbon App</a>
-            </div>
-          </div>  
-        </div>
-        <div class="box">
-          <img 
-            src="{{url_for('static', filename='icons/methodology1.svg')}}"
-            width="325" 
-            height="325"
-            alt=""/>
+  <div class="container">
+
+    <div class="header">
+      <div class="box">
+        <h1 style="font-size:55px;"><span class="text-logo"> Methodology</span></h1>
+        <p style="text-align:left;">
+          Our carbon calculator uses mathematical formulas from different sources. To calculate your carbon emission,
+          you have to know the distance you travel per day, week, month or year. This calculator is using the target
+          units kilometers and liters, and european standards of carbon emission.
+        </p>
+        <div class="container_buttons_links_header">
+          <div class="btn">
+            <a href="static/methodology_placeholder.pdf" target="_blank" class="btn btn-primary btn-lg mr-2" ,
+              style="background-color:#007bff;">Paper</a>
+          </div>
+          <div class="btn">
+            <a href="{{url_for('carbon_app.carbon_app_home')}}" class="btn btn-primary btn-lg mr-2" ,
+              style="background-color:#007bff;">Carbon App</a>
+          </div>
         </div>
       </div>
-      
+      <div class="box">
+        <img src="{{url_for('static', filename='icons/metho.jpg')}}" class="iconimg" />
+      </div>
     </div>
-</section> 
+
+  </div>
+</section>
 
 <!-- Methodology -->
 <section class="section_body_methodology">
-    <div class="encomp_allencomp">
+  <div class="encomp_allencomp">
 
     <div class="allencomp" id="asdas">
-        <div class="drop" id="one">
-            <p class="paratext">  TRAM</p> <!-- add icons for when if's showing vs not -->
-        </div>
-            <div class="inside" id="kek" style="display: none;">
-               <p>An average of 339 grams per person per day. <br><br>
-                    This is based upon the yearly direct and indirect emissions from all the combined trams divided by the daily amount of users and the days per year. This gives us the following formula: <br>
-                    \[ { { {CO_2 emissions} \over person }\over day }= { { {emission_Y} \over 365 days }\over DailyPassengers }= { { {7417.5tons CO_2} \over 365 days }\over 60 000 } \]
-                </p>
-            </div>
-        
-            <div class="drop" id="two">
-                <p class="paratext"><span><i class="fa-solid fa-plane-departure"></i></span>&nbsp;&nbsp; PLANE</p>
-            </div>
-            <div class="inside" id="kektwo" style="display: none;">
-                The formula for calculating carbon emissions per person per kilometer for a flight is:
-            <br> \[ { {CO_2 emissions Per Flight} \over passenger Capacity} * { {1} \over distance }\]
-              <br>
-                where CO2 emissions per flight is the total amount of CO2 emitted by the aircraft during the flight, passenger capacity is the number of passengers on the flight, and distance is the distance of the flight in kilometers. <br>
-                To calculate the carbon emissions per person per kilometer, you would then divide this result by the number of passengers on the flight.
-                So the formula is: 
-                \[ { { {CO_2EmissionsPerFlight} \over PassengerCapacity} * { {1}\over distance} } \over N.O.Passengers \]
-                
-                It's worth noting that this formula provides only an estimate, and actual emissions can vary depending on factors such as the type of aircraft, load factor, and routing.
-                
-            </div>
-            
+      <div class="drop" id="one">
+        <p class="paratext"><span><i class="fa-solid fa-train-tram"></i></i></span>&nbsp;&nbsp; TRAM</p> <!-- add icons for when if's showing vs not -->
+      </div>
+      <div class="inside" id="kek" style="display: none;">
+        <p>An average of 339 grams per person per day. <br><br>
+          This is based upon the yearly direct and indirect emissions from all the combined trams divided by the daily
+          amount of users and the days per year. This gives us the following formula: <br>
+          \[ { { {CO_2 emissions} \over person }\over day }= { { {emission_Y} \over 365 days }\over DailyPassengers }= {
+          { {7417.5tons CO_2} \over 365 days }\over 60 000 } \]
+        </p>
+      </div>
+
+      <div class="drop" id="two">
+        <p class="paratext"><span><i class="fa-solid fa-plane-departure"></i></span>&nbsp;&nbsp; PLANE</p>
+      </div>
+      <div class="inside" id="kektwo" style="display: none;">
+        The formula for calculating carbon emissions per person per kilometer for a flight is:
+        <br> \[ { {CO_2 emissions Per Flight} \over passenger Capacity} * { {1} \over distance }\]
+        <br>
+        where CO2 emissions per flight is the total amount of CO2 emitted by the aircraft during the flight, passenger
+        capacity is the number of passengers on the flight, and distance is the distance of the flight in kilometers.
+        <br>
+        To calculate the carbon emissions per person per kilometer, you would then divide this result by the number of
+        passengers on the flight.
+        So the formula is:
+        \[ { { {CO_2EmissionsPerFlight} \over PassengerCapacity} * { {1}\over distance} } \over N.O.Passengers \]
+
+        It's worth noting that this formula provides only an estimate, and actual emissions can vary depending on
+        factors such as the type of aircraft, load factor, and routing.
+
+      </div>
+      <div class="drop" id="three">
+        <p class="paratext"><span><i class="fa-solid fa-ferry"></i></span>&nbsp;&nbsp; FERRY</p>
+      </div>
+      <div class="inside" id="kekthree" style="display: none;">
+        isert ferry here
+      </div>
+
+      <div class="drop" id="four">
+        <p class="paratext"><span><i class="fa-solid fa-bus"></i></span>&nbsp;&nbsp; BUS</p>
+      </div>
+      <div class="inside" id="kekfour" style="display: none;">
+        insert bus here
+      </div>
+
+      <div class="drop" id="five">
+        <p class="paratext"><span><i class="fa-solid fa-motorcycle"></i></span>&nbsp;&nbsp; MOTORCYCLE</p>
+      </div>
+      <div class="inside" id="kekfive" style="display: none;">
+        insert motorcycle here
+      </div>
+
+      <div class="drop" id="six">
+        <p class="paratext"><span><i class="fa-solid fa-train"></i></span>&nbsp;&nbsp; TRAIN</p>
+      </div>
+      <div class="inside" id="keksix" style="display: none;">
+        insert train here
+      </div>
+
+      <div class="drop" id="seven">
+        <p class="paratext"><span><i class="fa-solid fa-person-hiking"></i></span>&nbsp;&nbsp;<span><i class="fa-solid fa-bicycle"></i></span>&nbsp;&nbsp; BIKING AND WALKING</p>
+      </div>
+      <div class="inside" id="kekseven" style="display: none;">
+        insert Walking and biking here
+      </div>
+
+      <div class="drop" id="eight">
+        <p class="paratext"><span><i class="fa-solid fa-car-side"></i></span>&nbsp;&nbsp; CAR</p>
+      </div>
+      <div class="inside" id="kekeight" style="display: none;">
+        insert car here
+      </div>
+
     </div>
-    
-</div>
-    <script src="{{ url_for('static', filename='meth.js')}}"></script>
-    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+  </div>
+  <script src="{{ url_for('static', filename='meth.js')}}"></script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 </section>
 
 {% endblock content %}
