@@ -1,4 +1,4 @@
-{% extends "layout.html" %}
+ {% extends "layout.html" %}
 {% block content %}
 
 <!-- Header -->
@@ -19,21 +19,12 @@
         {% endif %}
         {% endwith %}
 
-        <h1 style="font-size:55px;"><span class="text-logo"> Home</span></h1>
+        <h1 class="text-logo"> Home</span></h1>
         <p style="text-align:left;">
          Carbon emissions, also known as greenhouse gas emissions, refer to the release of carbon dioxide and other gases into the atmosphere, primarily as a result of human activities such as burning fossil fuels for energy, deforestation, and industrial processes (Osmanski, 2020). These emissions are a significant contributor to global climate change, which has far-reaching impacts on our planet, including rising sea levels, more frequent and severe weather events, and changes in ecosystems and agriculture. As the world becomes more industrialized and populations continue to grow, the need to address carbon emissions and mitigate their impact becomes increasingly urgent (NOAA, 2021). Governments, businesses, and individuals around the world must be working to reduce emissions through a variety of strategies, including increasing the use of renewable energy, improving energy efficiency, and adopting low-carbon lifestyles.
 
         </p>
-        <div class="container_buttons_links_header_home">
-          <div class="btn">
-            <a href="{{url_for('users.register')}}" class="btn btn-primary btn-lg mr-2" ,
-              style="background-color:#8bcb8f;">Register</a>
-          </div>
-          <div class="btn">
-            <a href="{{url_for('users.login')}}" class="btn btn-primary btn-lg mr-2" ,
-              style="background-color:#8bcb8f;">Login</a>
-          </div>
-        </div>
+
       </div>
       <div class="box">
         <img class="iconimg" src="{{url_for('static', filename='home.gif')}}" />
