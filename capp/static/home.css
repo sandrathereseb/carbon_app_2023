@@ -30,100 +30,8 @@ p { /* change this to a class from global attribute */
 .header_home .box:nth-of-type(2) {
   flex-grow:1;
 }
-.container_buttons_links_header_home {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-wrap:wrap;
-}
-.container_buttons_links_header_home a:hover {
-  background-color: #349370;
-}
-.container_buttons_links_header_home btn {
-  width: 100px;
-  height: 100px;
-  background: #349370;
-  color: #349370;
-  display: flex;
-  justify-content:center;
-  align-items:center;
-}
+
 /* Section developers */
-
-
-.section_developers {
-  background-color:#899cc4;
-}
-.developers {
-  display: flex;  
-  align-items: start;
-  background: #899cc4;
-}
-.developers .box {
-  flex: 1;
-  background: #49736f;
-  color: black;
-  border-radius: 10px;
-  margin: 20px 10px;
-  padding: 15px 20px;
-  text-align:center;
-  align-items: center;
-  justify-content: center;
-}
-.developers .box:nth-of-type(1) {
-  flex-grow:4;
-}
-.developers .box:nth-of-type(2) {
-  flex-grow:4;
-}
-.developers .box:nth-of-type(3) {
-  flex-grow:4;
-}
-.developers .box2 {
-  flex: 1;
-  background: #49736f;
-  color: black;
-  border-radius: 10px;
-  margin: 20px 10px;
-  padding: 15px 20px;
-  text-align:center;
-  align-items: center;
-  justify-content: center;
-}
-.developers .box2:nth-of-type(1) {
-  flex-grow:4;
-}
-.developers .box2:nth-of-type(2) {
-  flex-grow:4;
-}
-.developers .box2:nth-of-type(3) {
-  flex-grow:4;
-  background: #c5c8d9;
-}
-.section_container_buttons_developers {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-wrap:wrap;
-  padding: 0px 0px;
-  margin: 0px 0px;
-}
-.btn_developers {
-  padding: 10px 10px;
-  margin: 10px 10px 10px 10px;
-  color: #fff;
-  border-radius: 5px;
-  text-decoration: none;
-  font-size: 18px;
-  background-color: #49736f;
-  border: 2px solid  #c5c8d9;
-}
-.btn_developers:hover {
-  color: #fff;
-  background-color: #c5c8d9;
-  border: 2px solid #c5c8d9;
-  text-decoration: none;
-}
 
 
 @media (max-width:768px) { 
@@ -192,12 +100,13 @@ margin-top: 20px;
   position: absolute;
   bottom: 5px;
   height: 30px;
-  width: 90px;
+  width: 60px;
   background-color: #8bcb8f;
-  color: white;
+  color: #445c93;
   border-radius: 8px;
   border-color: #349370;
   border-style: solid;
+  font-weight: 1000;
 }
 
 .butnnn:hover {
