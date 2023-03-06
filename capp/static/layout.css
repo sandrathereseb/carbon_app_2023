@@ -1,9 +1,9 @@
 /* Colors */
 /* Rainy theme 5 -Green Digitalization Course and Students Apps-:
-Navbar (background): #8bbbd9
+Navbar (background): #445c93
 Navbar (a hover): #466fa6
 Navbar (logo): #568c63
-Navbar (a menu): #2a4359
+Navbar (a menu): white
 */
 
 /* Google fonts Roboto  */
@@ -35,9 +35,10 @@ a {
   color: #333;
   text-decoration: none;
 }
-h1, h2 {
+.bottxt {
   font-weight: 400;
   line-height: 1.2;
+  color: white;
 }
 p {
   margin: 10px 0;
@@ -48,7 +49,7 @@ img {
 }
 /* Navbar  */
 .section_carbon_app_navbar {
-  background-color:#8bbbd9;
+  background-color:#445c93;
 }
 .carbon_app_navbar {
   display: flex;
@@ -56,19 +57,19 @@ img {
   justify-content: flex-start;
   height: 70px;
   align-items: center;
-  background-color: #8bbbd9;
+  background-color: #445c93;
   padding: 0 0px;
 
 }
 .carbon_app_navbar a {
-  color: #2a4359;
+  color: white;
   padding: 10px 20px;
   margin: 0 5px;
   font-size: 20px;
   text-decoration: none;
 }
 .carbon_app_navbar a:hover{
-  border-bottom: #2a4359 4px solid;
+  border-bottom: white 4px solid;
 }
 .carbon_app_navbar ul {
   display: flex;
@@ -78,11 +79,16 @@ img {
   font-weight: 400;
 }
 .text-logo {
-  color: #568c63;
+  color: #8bcb8f;
+  font-size: 55px;
+}
+.logo{
+  color: white;
+  font-size: 30px;
 }
 /* Footer  */
 .section_footer{
-  background-color:#8bbbd9;
+  background-color:#445c93;
 }
 .footer {
   display: flex;
@@ -90,7 +96,7 @@ img {
   justify-content: center;
   height: 70px;
   align-items: center;
-  background-color: #8bbbd9;
+  background-color: #445c93;
   padding: 0 0px;
 }
 
@@ -111,7 +117,7 @@ img {
   }
   .carbon_app_navbar a:hover{
     color: #568c63;
-    border-bottom: #2a4359 2px solid;
+    border-bottom: white 2px solid;
   }
 }
 .lastones{
@@ -128,18 +134,18 @@ img {
   justify-content: flex-start;
   height: 70px;
   align-items: center;
-  background-color: #8bbbd9;
+  background-color: #445c93;
   padding: 0 0px;
 }
 .last2 a {
-  color: #2a4359;
+  color: white;
   padding: 10px 20px;
   margin: 0 5px;
   font-size: 20px;
   text-decoration: none;
 }
 .last2 a:hover{
-  border-bottom: #2a4359 4px solid;
+  border-bottom: white 4px solid;
 }
 
 
