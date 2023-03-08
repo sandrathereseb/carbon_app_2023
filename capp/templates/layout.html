@@ -44,22 +44,21 @@
             <li class="liNavbar">
               <a class="clickablelink" href="{{url_for('methodology.methodology_home')}}">Methology</a>
             </li>
-            <li class="liNavbar">
+            <li class="liNavbar3">
               <a class="clickablelink" href="{{url_for('carbon_app.carbon_app_home')}}">Carbon App</a>
+            </li>
+            <li class="liNavbar2">
+              <a class="clickablelink" href="{{url_for('users.register')}}">Register</a>
+            </li>
+            <li class="liNavbar2">
+              <a class="clickablelink" href="{{url_for('users.login')}}">Login</a>
             </li>
           </ul>
         </nav>
       </div>
     </div>
   </section>
-  <div class="lastones">
-    <div class="last2">
-      <a class="clickablelink" href="{{url_for('users.register')}}">Register</a>
-    </div>
-    <div class="last2">
-      <a class="clickablelink" href="{{url_for('users.login')}}">Login</a>
-    </div>
-  </div>
+
   {% block content %} {% endblock %}
   <section class="section_footer">
     <div class="container">
