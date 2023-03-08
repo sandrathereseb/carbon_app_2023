@@ -1,94 +1,93 @@
- {% extends "layout.html" %}
- {% block content %}
+<!DOCTYPE html>
+<html>
 
- <!-- Header -->
- <section class="section_header_home">
-   <div class="container">
-     <div class="header_home">
-       <div class="box">
-         <!-- Flash message, user created -->
-         {% with messages = get_flashed_messages(with_categories=true) %}
-         {% if messages %}
-         {% for category, message in messages %}
-         <div class="alert alert-{{ category }}">
-           {{ message }}
-         </div>
-         {% endfor %}
-         {% endif %}
-         {% endwith %}
-         <h1 class="text-logo"> Home</span></h1>
-         <p class="maintext">
-           Carbon emissions, also known as greenhouse gas emissions, refer to the release of carbon dioxide and other
-           gases into the atmosphere, primarily as a result of human activities such as burning fossil fuels for energy,
-           deforestation, and industrial processes (Osmanski, 2020). These emissions are a significant contributor to
-           global climate change, which has far-reaching impacts on our planet, including rising sea levels, more
-           frequent and severe weather events, and changes in ecosystems and agriculture. As the world becomes more
-           industrialized and populations continue to grow, the need to address carbon emissions and mitigate their
-           impact becomes increasingly urgent (NOAA, 2021). Governments, businesses, and individuals around the world
-           must be working to reduce emissions through a variety of strategies, including increasing the use of
-           renewable energy, improving energy efficiency, and adopting low-carbon lifestyles.
-         </p>
-       </div>
-       <div class="box">
-         <img class="iconimg" src="{{url_for('static', filename='icons/home.gif')}}" />
-       </div>
-     </div>
+<head>
+  <!-- Font Awesome code -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+    integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <!--Import the Bootstrap CSS file:-->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css" />
+  <!-- Matjax -->
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+  <!-- CSS code -->
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='cssFiles/layout.css') }}">
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='cssFiles/home.css') }}">
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='cssFiles/methodology.css') }}">
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='cssFiles/carbon_app.css') }}">
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='cssFiles/user.css') }}">
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='cssFiles/meth.css') }}">
+  <!-- To activate media queries in devices -->
+  <meta name="viewport" content="user-scalable=yes, width=device-width, initial-scale=1">
+  {% if title %}
+  <title>{{ title }}</title>
+  {% else %}
+  <title>home</title>
+  {% endif %}
+</head>
 
-   </div>
- </section>
+<body>
+  <section class="section_carbon_app_navbar">
+    <div class="container">
+      <div class="carbon_app_navbar">
+        <h1 class="logo">
+          <span class="text-logo"><i class="fa-solid fa-seedling"></i> Carbon</span> App
+        </h1>
+        <nav>
+          <ul class="ulNavbar">
+            <li class="liNavbar">
+              <a class="clickablelink" href="{{url_for('home.home_home')}}">Home</a>
+            </li>
+            <li class="liNavbar">
+              <a class="clickablelink" href="{{url_for('methodology.methodology_home')}}">Methology</a>
+            </li>
+            <li class="liNavbar3">
+              <a class="clickablelink" href="{{url_for('carbon_app.carbon_app_home')}}">Carbon App</a>
+            </li>
+            <li class="liNavbar2">
+              <a class="clickablelink" href="{{url_for('users.register')}}">Register</a>
+            </li>
+            <li class="liNavbar2">
+              <a class="clickablelink" href="{{url_for('users.login')}}">Login</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+  </section>
 
- <!-- Developers -->
- <div class="dev">
+  {% block content %} {% endblock %}
+  <section class="section_footer">
+    <div class="container">
+      <div class="footer">
+        <h1 class="bottxt">
+          Carbon App
+          <a class="clickablelink" href="#">
+            <i class="fa-solid fa-circle-up" style="color: #568c63"></i>
+          </a>
+        </h1>
+      </div>
+    </div>
+  </section>
+  <!-- Bootstrap -->
+  <!-- Question Accordion -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous">
+  </script>
+  <!-- Optional JavaScript -->
+  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
+  </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous">
+  </script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
+  </script>
+</body>
 
-   <div class="person">
-     <h2 class="NameTItle">Rune</h2>
-     <img class="pfp" src="static/devs/cookie.jpg" alt="Picture of Rune">
-     <p class="Ptext">
-       I take the bus a lot so i am kind of an expert in this field :)
-     </p>
-     <input class="CVBtn" type="button" value="CV">
-   </div>
-
-   <div class="person">
-     <h2 class="NameTItle">Nathan</h2>
-     <img class="pfp" src="static/devs/nathan.jpg" alt="Picture of Nathan">
-     <p class="Ptext">
-     </p>
-     <input class="CVBtn" type="button" value="CV">
-   </div>
-
-   <div class="person">
-     <h2 class="NameTItle">Eilie</h2>
-     <img class="pfp" src="static/devs/Eilie.png" alt="Picture of Eilie">
-     <p class="Ptext">
-     </p>
-     <input class="CVBtn" type="button" value="CV">
-   </div>
-
-   <div class="person">
-     <h2 class="NameTItle">Sondre</h2>
-     <img class="pfp" src="static/devs/aa02.jpg" alt="Picture of Sondre">
-     <p class="Ptext">
-     </p>
-     <input type="button" class="CVBtn" value="CV">
-   </div>
-
-   <div class="person">
-     <h2 class="NameTItle">Sandra</h2>
-     <div id="res"></div>
-     <img class="pfp" src="static/devs/sandra.jpg" alt="Picture of Sandra">
-     <p class="Ptext">
-     </p>
-     <input class="CVBtn" type="button" value="CV">
-   </div>
-
-   <div class="person">
-     <h2 class="NameTItle">Sander</h2>
-     <img class="pfp" src="static/devs/IMG_0468.jpg" alt="Picture of Sander">
-     <p class="Ptext">
-     </p>
-     <input class="CVBtn" type="button" value="CV">
-   </div>
-
- </div>
- {% endblock content %}
+</html>
