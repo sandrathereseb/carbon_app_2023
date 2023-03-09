@@ -57,8 +57,12 @@ Carbon App, section 2 (header, boxes): #8badd9
   align-items: center;
 }
 
-@media (max-width:768px) {
+@media (max-width:1288px) {
   .header_carbon_app {
     flex-direction: column;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
   }
+
 }

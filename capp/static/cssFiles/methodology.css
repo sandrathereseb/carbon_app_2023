@@ -17,7 +17,7 @@ Methodology, section 2 (methodology, boxes): #8badd9
 }
 
 .header .box {
-  flex: 1;
+
   background: #2a4359;
   color: #fff;
   border-radius: 10px;
@@ -62,13 +62,23 @@ Methodology, section 2 (methodology, boxes): #8badd9
   background-color: #466fa6;
 }
 
-@media (max-width:768px) {
+@media (max-width:1288px) {
   .header {
     flex-direction: column;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
   }
 
-  .methodology {
+  .encomp_allencomp {
     flex-direction: column;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .box {
+    width: 700px;
   }
 }
 
