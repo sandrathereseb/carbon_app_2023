@@ -75,17 +75,38 @@ Methodology, section 2 (methodology, boxes): #8badd9
     text-align: center;
     align-items: center;
     justify-content: center;
+    width: 600px;
   }
 
   .box {
     width: 700px;
   }
+  .allencomp{
+   display: flex;
+   flex-direction: column;
+    width: fit-content;
+  }
+  .allencomp2{
+    flex-direction: column;
+    display: flex;
+    width: fit-content;
+  }
 }
+.encomp_allencomp {
+  display: flex;
+  flex-direction: row;
+  width: fit-content;
 
+}
 .allencomp {
   width: 600px;
   height: fit-content;
-
+  padding: 15px;
+  margin: 10px;
+}
+.allencomp2 {
+  width: 600px;
+  height: fit-content;
   padding: 15px;
   margin: 10px;
 }
@@ -95,8 +116,8 @@ Methodology, section 2 (methodology, boxes): #8badd9
   height: 50px;
   outline-style: solid;
   outline-width: 4px;
-  outline-color: rgb(122, 179, 122);
-  background-color: rgb(119, 224, 124);
+  outline-color: #349370;
+  background-color: #8bcb8f;
   margin: 30px;
   text-align: center;
   display: flex;
@@ -112,7 +133,7 @@ Methodology, section 2 (methodology, boxes): #8badd9
 }
 
 .drop:hover {
-  background-color: rgb(122, 179, 122);
+  background-color:#349370;
   cursor: pointer;
 }
 
@@ -123,7 +144,4 @@ Methodology, section 2 (methodology, boxes): #8badd9
   color: #FBFAF5;
 }
 
-.encomp_allencomp {
-  display: flex;
-  flex-direction: row;
-}
+
