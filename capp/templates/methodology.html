@@ -78,40 +78,60 @@
         <p class="paratext"><span><i class="fa-solid fa-bus"></i></span>&nbsp;&nbsp; BUS</p>
       </div>
       <div class="inside" id="kekfour" style="display: none;">
-        insert bus here
+        The formula for calculating carbon emissions per person for a bus ride depends on the distance traveled and the fuel efficiency of the bus. Assuming an average of 27.5 passenger miles per gallon for a typical transit bus in the United States, the formula is:
+        Carbon Emissions per person is: 
+        \[ { { {DistanceTraveled} \over { PassengerCapacity } } * { {CO_2 PerGallonOfFuel} \over {FuelEfficeincy} } }\]
+
       </div>
 
-      <div class="drop" id="five">
-        <p class="paratext"><span><i class="fa-solid fa-motorcycle"></i></span>&nbsp;&nbsp; MOTORCYCLE</p>
-      </div>
-      <div class="inside" id="kekfive" style="display: none;">
-        insert motorcycle here
-      </div>
-
-      <div class="drop" id="six">
-        <p class="paratext"><span><i class="fa-solid fa-train"></i></span>&nbsp;&nbsp; TRAIN</p>
-      </div>
-      <div class="inside" id="keksix" style="display: none;">
-        insert train here
-      </div>
-
-      <div class="drop" id="seven">
-        <p class="paratext"><span><i class="fa-solid fa-person-hiking"></i></span>&nbsp;&nbsp;<span><i
-              class="fa-solid fa-bicycle"></i></span>&nbsp;&nbsp; BIKING AND WALKING</p>
-      </div>
-      <div class="inside" id="kekseven" style="display: none;">
-        insert Walking and biking here
-      </div>
-
-      <div class="drop" id="eight">
-        <p class="paratext"><span><i class="fa-solid fa-car-side"></i></span>&nbsp;&nbsp; CAR</p>
-      </div>
-      <div class="inside" id="kekeight" style="display: none;">
-        insert car here
-      </div>
 
     </div>
+<div class="allencomp2">
+  
+  <div class="drop" id="five">
+    <p class="paratext"><span><i class="fa-solid fa-motorcycle"></i></span>&nbsp;&nbsp; MOTORCYCLE</p>
+  </div>
+  <div class="inside" id="kekfive" style="display: none;">
+    insert motorcycle here
+  </div>
 
+  <div class="drop" id="six">
+    <p class="paratext"><span><i class="fa-solid fa-train"></i></span>&nbsp;&nbsp; TRAIN</p>
+  </div>
+  <div class="inside" id="keksix" style="display: none;">
+    The formula to calculate carbon emissions per person by train involves several variables, including the distance traveled, the type of train, and the energy source used to power the train. However, as a general rule of thumb, the formula can be approximated as follows:
+<br>
+Carbon emissions per person by train:
+\[  {DistanceTraveled} * {0,11kg_{CO2}/person} \]
+  </div>
+
+  <div class="drop" id="seven">
+    <p class="paratext"><span><i class="fa-solid fa-person-hiking"></i></span>&nbsp;&nbsp;<span><i
+          class="fa-solid fa-bicycle"></i></span>&nbsp;&nbsp; BIKING AND WALKING</p>
+  </div>
+  <div class="inside" id="kekseven" style="display: none;">
+    Walking is great for you and emmits 0g CO2
+  </div>
+
+  <div class="drop" id="eight">
+    <p class="paratext"><span><i class="fa-solid fa-car-side"></i></span>&nbsp;&nbsp; CAR</p>
+  </div>
+  <div class="inside" id="kekeight" style="display: none;">
+    Gasoline cars: <br>
+    <p>  CO2 Emissions from one liter of gasoline: 2,401 grams Co2 </p>
+  Total emissions:
+  <p> \[  LitersGasoline * 2,401_g CO2 \] </p>
+<br>
+    Diesel cars: <br>
+    <p> CO2 Emissions from one liter of diesel 2,731 grams Co2 </p>
+    Total emissions: 
+  <p>\[ Liters Diesel  *2,731_gCO2 \]</p>
+
+
+
+
+  </div>
+</div>
   </div>
   <script src="{{ url_for('static', filename='meth.js')}}"></script>
   <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
