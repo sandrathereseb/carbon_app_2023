@@ -13,12 +13,12 @@ background-color: #899cc4;
 .header {
   display: flex;
   align-items: start;
-  background: #2a4359;
+background-color: #899cc4;
 }
 
 .header .box {
 
-  background: #2a4359;
+background-color: #899cc4;
   color: #fff;
   border-radius: 10px;
   margin: 20px 10px;
@@ -44,13 +44,13 @@ background-color: #899cc4;
 }
 
 .container_buttons_links_header a:hover {
-  color: #2a4359;
+color: #899cc4;
 }
 
 .container_buttons_links_header btn {
   width: 100px;
   height: 100px;
-  background: #2a4359;
+background-color: #899cc4;
   color: #fff;
   display: flex;
   justify-content: center;
