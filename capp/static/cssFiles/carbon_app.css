@@ -13,12 +13,12 @@ background-color: #899cc4;
 .header_carbon_app {
   display: flex;
   align-items: start;
-  background: #466fa6;
+background-color: #899cc4;
 }
 
 .header_carbon_app .box {
   flex: 1;
-  background: #466fa6;
+background-color: #899cc4;
   color: #fff;
   border-radius: 10px;
   margin: 20px 10px;
