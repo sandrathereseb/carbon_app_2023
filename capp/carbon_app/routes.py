@@ -1,4 +1,6 @@
 from flask import render_template, Blueprint
+from capp.models import Transport
+from flask_login import login_required
 
 carbon_app=Blueprint('carbon_app',__name__)
 
