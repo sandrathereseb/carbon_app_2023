@@ -30,6 +30,33 @@
 </head>
 
 <body>
+  {% if current_user.is_authenticated %}
+  <section class="section_carbon_app_navbar">
+    <div class="container">
+      <div class="carbon_app_navbar">
+        <h1 class="logo">
+          <span class="text-logo"><i class="fa-solid fa-seedling"></i> Carbon</span> App
+        </h1>
+        <nav>
+          <ul class="ulNavbar">
+            <li class="liNavbar">
+              <a class="clickablelink" href="{{url_for('home.home_home')}}">HOME</a>
+            </li>
+            <li class="liNavbar">
+              <a class="clickablelink" href="{{url_for('methodology.methodology_home')}}">METHODOLOGY</a>
+            </li>
+            <li class="liNavbar3">
+              <a class="clickablelink" href="{{url_for('carbon_app.carbon_app_home')}}">CARBON APP</a>
+            </li>
+            <li class="liNavbar2">
+              <a class="clickablelink" href="{{url_for('users.logout')}}">LOG OUT</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+  </section>
+  {% else %}
   <section class="section_carbon_app_navbar">
     <div class="container">
       <div class="carbon_app_navbar">
@@ -58,6 +85,7 @@
       </div>
     </div>
   </section>
+  {% endif %}
 
   {% block content %} {% endblock %}
   <section class="section_footer">
