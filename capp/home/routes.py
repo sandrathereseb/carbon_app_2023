@@ -1,4 +1,5 @@
 from flask import render_template, Blueprint
+from capp.models import User
 
 home=Blueprint('home',__name__)
 
