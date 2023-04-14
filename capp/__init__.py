@@ -9,7 +9,7 @@ application = Flask(__name__)
 
 application.config['SECRET_KEY'] = os.environ['SECRET_KEY']  
 application.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///user.db'
-application.config['SQLALCHEMY_BINDS'] = {'trasport':'sqlite:///transport.db'}
+application.config['SQLALCHEMY_BINDS'] = {'transport':'sqlite:///transport.db'}
 
 db = SQLAlchemy(application)
 bcrypt=Bcrypt(application)
