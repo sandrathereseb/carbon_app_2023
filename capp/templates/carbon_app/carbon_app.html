@@ -1,78 +1,133 @@
 {% extends "layout.html" %}
 {% block content %}
 
-<!-- Header -->
-<section class="section_header_carbon_app">
-    <div class="container">
-
+    <!-- Header -->
+    <section class="section_header_carbon_app">
+        <div class="container">
+    
         <div class="header_carbon_app">
-            <div class="box">
-                <h1 style="font-size:55px;"><span class="text-logo"> Carbon App Calculator</span></h1>
-                <p style="text-align:left;">
-                  Enter our carbon emission calculator app - an innovative tool that allows you to calculate your carbon emissions in a quick and easy way. By simply inputting data about your daily habits and activities, you can get a comprehensive breakdown of your carbon emissions, as well as recommendations for reducing them. With this app, you can take control of your carbon footprint and make informed decisions about your lifestyle, helping to reduce your impact on the environment. Whether you're an individual looking to live a more sustainable lifestyle or a business looking to reduce your carbon footprint, this app can help you take meaningful steps towards a more sustainable future.
-                </p>
-                <div class="container_buttons_links_header_carbon_app">
-                    <div class="btn">
-                        <a href="{{url_for('methodology.methodology_home')}}" class="btn btn-primary btn-lg mr-2" ,
-                            style="background-color:#007bff;">Methodology</a>
-                    </div>
-                    <div class="btn">
-                        <a href="#" class="btn btn-primary btn-lg mr-2" , style="background-color:#007bff;" ,
-                            data-toggle="modal" data-target="#carbon_app_instructions">Instructions</a>
-                    </div>
-                    <div class="btn">
-                        <a href="{{url_for('carbon_app.new_entry')}}" class="btn btn-primary btn-lg mr-2" ,
-                            style="background-color:#007bff;">New entry</a>
-                    </div>
-                    <div class="btn">
-                        <a href="{{url_for('carbon_app.your_data')}}" class="btn btn-primary btn-lg mr-2" ,
-                            style="background-color:#007bff;">Your data</a>
-                    </div>
+            <div class="box"> 
+            <h1 style="font-size:55px;"><span class="text-logo"> Carbon App Calculator</span></h1>
+            <p style="text-align:left;">
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Repellat dolores quos asperiores repellendus facilis cum illo aperiam odit doloremque nostrum. Totam excepturi labore voluptatibus iusto sapiente quisquam consectetur optio magnam voluptates omnis vel officia alias distinctio quas laborum reiciendis ratione inventore veniam, cupiditate doloribus dolore, eius natus a. Magni inventore consequuntur voluptas reprehenderit perferendis! Molestias aspernatur rem autem aut temporibus.
+            </p>
+            <div class="container_buttons_links_header_carbon_app">
+                <div class="btn">
+                    <a href="{{url_for('methodology.methodology_home')}}" class="btn btn-primary btn-lg mr-2", style="background-color:#007bff;">Methodology</a>
                 </div>
-                <!-- Modal Instructions -->
-                <div class="modal fade" id="carbon_app_instructions" tabindex="-1" role="dialog"
-                    aria-labelledby="exampleModalLabel" aria-hidden="true">
-                    <div class="modal-dialog" role="document">
-                        <div class="modal-content">
-
-                            <div class="modal-header">
-                                <h5 class="modal-title" , style="color:black; text-align: center;">Carbon App,
-                                    instructions</h5>
-                            </div>
-
-                            <div class="modal-body" , style="color:black">
-                                <p style="text-align: left;">
-                                    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Repudiandae ratione
-                                    tempore id esse nobis molestias quasi explicabo possimus ea reprehenderit.
-                                </p>
-                                <ol style="text-align:left;">
-                                    <li>
-                                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi, sint.
-                                    </li>
-                                    <li>
-                                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi, sint.
-                                    </li>
-                                </ol>
-                            </div>
-
-                            <div class="modal-footer">
-                                <a href="{{url_for('carbon_app.new_entry')}}" class="btn btn-primary btn-lg mr-2" ,
-                                    style="background-color:#007bff;">New entry</a>
-                                <button class="btn btn-secondary btn-lg mr-2" , style="background-color:#6c757d;"
-                                    data-dismiss="modal">Close</button>
-                            </div>
-
-                        </div>
-                    </div>
+                <div class="btn">
+                    <a href="{{url_for('carbon_app.your_data')}}" class="btn btn-primary btn-lg mr-2", style="background-color:#007bff;">Your data</a>
                 </div>
+            </div>  
             </div>
             <div class="box">
-                <img src="{{url_for('static', filename='icons/carbon_calculator.gif')}}" class="iconimg" />
+            <img 
+                src="{{url_for('static', filename='icons/calculator.svg')}}"
+                width="325" 
+                height="325"
+                alt=""/>
             </div>
         </div>
+        
+        </div>
+    </section> 
 
+    <!-- carbon_app_new_entry_main -->
+    <section class="section_carbon_app_new_entry_main">
+    <div class="container">
+  
+      <div class="carbon_app_new_entry_main" style="display:block;">
+        <br>
+        <h3 style="text-align:center;">Please, select your mean of conveyance in the boxes below</h3>     
+      </div>
+  
+      <div class="carbon_app_new_entry_main">
+          <div class="box">
+            <div class="h1 mb-3" style="text-align: center;">
+                <i class="fa-solid fa-bus"></i>
+            </div>
+            <h3>Bus</h3>
+            <p>Please, enter your kilometers by using the bus.
+            </p>
+            <div class="section_container_buttons_carbon_app_new_entry_main">
+              <a class="btn_carbon_app_new_entry_main" href="{{url_for('carbon_app.new_entry_bus')}}">New Entry</a>
+            </div> 
+          </div>
+          <div class="box">
+            <div class="h1 mb-3" style="text-align: center;">
+                <i class="fa-solid fa-car"></i>
+            </div>
+            <h3>Car</h3>
+            <p>Please, enter your kilometers by using the car.
+            </p>
+            <div class="section_container_buttons_carbon_app_new_entry_main">
+              <a class="btn_carbon_app_new_entry_main" href="{{url_for('carbon_app.new_entry_car')}}">New Entry</a>
+            </div> 
+          </div>           
+          <div class="box">
+            <div class="h1 mb-3" style="text-align: center;">
+                <i class="fa-solid fa-plane"></i>
+            </div>
+            <h3>Plane</h3>
+            <p>Please, enter your kilometers by using the plane.
+            </p>
+            <div class="section_container_buttons_carbon_app_new_entry_main">
+              <a class="btn_carbon_app_new_entry_main" href="{{url_for('carbon_app.new_entry_plane')}}">New Entry</a>
+            </div> 
+          </div>
+          <div class="box">
+            <div class="h1 mb-3" style="text-align: center;">
+                <i class="fa-solid fa-ship"></i>
+            </div>
+            <h3>Ferry</h3>
+            <p>Please, enter your kilometers by using the ferry.
+            </p>
+            <div class="section_container_buttons_carbon_app_new_entry_main">
+              <a class="btn_carbon_app_new_entry_main" href="{{url_for('carbon_app.new_entry_ferry')}}">New Entry</a>
+            </div> 
+          </div>      
+      </div>
+
+      <div class="carbon_app_new_entry_main">
+        <div class="box">
+          <div class="h1 mb-3" style="text-align: center;">
+            <i class="fa-solid fa-motorcycle"></i>
+          </div>
+          <h3>Motorbike</h3>
+          <p>Please, enter your kilometers by using the motocycle.
+          </p>
+          <div class="section_container_buttons_carbon_app_new_entry_main">
+            <a class="btn_carbon_app_new_entry_main" href="{{url_for('carbon_app.new_entry_motorbike')}}">New Entry</a>
+          </div> 
+        </div>    
+        <div class="box">
+          <div class="h1 mb-3" style="text-align: center;">
+            <i class="fa-solid fa-bicycle"></i>
+          </div>
+          <h3>Bicycle</h3>
+          <p>Please, enter your kilometers by using the bicycle.
+          </p>
+          <div class="section_container_buttons_carbon_app_new_entry_main">
+            <a class="btn_carbon_app_new_entry_main" href="{{url_for('carbon_app.new_entry_bicycle')}}">New Entry</a>
+          </div> 
+        </div>
+        <div class="box">
+          <div class="h1 mb-3" style="text-align: center;">
+            <i class="fa-solid fa-person-walking"></i>
+          </div>
+          <h3>Walk</h3>
+          <p>Please, enter your kilometers by walking.
+          </p>
+          <div class="section_container_buttons_carbon_app_new_entry_main">
+            <a class="btn_carbon_app_new_entry_main" href="{{url_for('carbon_app.new_entry_walk')}}">New Entry</a>
+          </div> 
+        </div> 
+        <div class="box" style="background-color:#c5c8d9;">
+        </div>      
     </div>
-</section>
-
+  
+    </div>          
+    </section>
+       
 
 {% endblock content %}
