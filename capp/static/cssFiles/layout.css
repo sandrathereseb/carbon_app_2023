@@ -41,6 +41,8 @@ p {
 /* Navbar  */
 .section_carbon_app_navbar {
   background-color: #445c93;
+  position: sticky;
+  top: 0;
 
 }
 
