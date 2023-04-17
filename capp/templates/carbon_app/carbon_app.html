@@ -13,10 +13,10 @@
             </p>
             <div class="container_buttons_links_header_carbon_app">
                 <div class="btn">
-                    <a href="{{url_for('methodology.methodology_home')}}" class="btn btn-primary btn-lg mr-2", style="background-color:#007bff;">Methodology</a>
+                    <a href="{{url_for('methodology.methodology_home')}}" class="btn_carbon_app_new_entry_main">Methodology</a>
                 </div>
                 <div class="btn">
-                    <a href="{{url_for('carbon_app.your_data')}}" class="btn btn-primary btn-lg mr-2", style="background-color:#007bff;">Your data</a>
+                    <a href="{{url_for('carbon_app.your_data')}}" class="btn_carbon_app_new_entry_main">Your data</a>
                 </div>
             </div>  
             </div>
@@ -34,7 +34,7 @@
   
       <div class="carbon_app_new_entry_main" style="display:block;">
         <br>
-        <h3 style="text-align:center;">Please, select your mean of conveyance in the boxes below</h3>     
+        <h2 style="text-align:center;">Please, select your mean of transportation in the boxes below</h2>     
       </div>
   
       <div class="carbon_app_new_entry_main">
@@ -42,8 +42,8 @@
             <div class="h1 mb-3" style="text-align: center;">
                 <i class="fa-solid fa-bus"></i>
             </div>
-            <h3>Bus</h3>
-            <p>Please, enter your kilometers by using the bus.
+            <h3>BUS</h3>
+            <p class="in-box-text-CA">Please, enter your kilometers by using the bus.
             </p>
             <div class="section_container_buttons_carbon_app_new_entry_main">
               <a class="btn_carbon_app_new_entry_main" href="{{url_for('carbon_app.new_entry_bus')}}">New Entry</a>
@@ -51,10 +51,10 @@
           </div>
           <div class="box">
             <div class="h1 mb-3" style="text-align: center;">
-                <i class="fa-solid fa-car"></i>
+                <i class="fa-solid fa-car-side"></i>
             </div>
-            <h3>Car</h3>
-            <p>Please, enter your kilometers by using the car.
+            <h3>CAR</h3>
+            <p class="in-box-text-CA">Please, enter your kilometers by using the car.
             </p>
             <div class="section_container_buttons_carbon_app_new_entry_main">
               <a class="btn_carbon_app_new_entry_main" href="{{url_for('carbon_app.new_entry_car')}}">New Entry</a>
@@ -62,10 +62,10 @@
           </div>           
           <div class="box">
             <div class="h1 mb-3" style="text-align: center;">
-                <i class="fa-solid fa-plane"></i>
+                <i class="fa-solid fa-plane-departure"></i>
             </div>
-            <h3>Plane</h3>
-            <p>Please, enter your kilometers by using the plane.
+            <h3>PLANE</h3>
+            <p class="in-box-text-CA">Please, enter your kilometers by using the plane.
             </p>
             <div class="section_container_buttons_carbon_app_new_entry_main">
               <a class="btn_carbon_app_new_entry_main" href="{{url_for('carbon_app.new_entry_plane')}}">New Entry</a>
@@ -73,10 +73,10 @@
           </div>
           <div class="box">
             <div class="h1 mb-3" style="text-align: center;">
-                <i class="fa-solid fa-ship"></i>
+                <i class="fa-solid fa-ferry"></i>
             </div>
-            <h3>Ferry</h3>
-            <p>Please, enter your kilometers by using the ferry.
+            <h3>FERRY</h3>
+            <p class="in-box-text-CA">Please, enter your kilometers by using the ferry.
             </p>
             <div class="section_container_buttons_carbon_app_new_entry_main">
               <a class="btn_carbon_app_new_entry_main" href="{{url_for('carbon_app.new_entry_ferry')}}">New Entry</a>
@@ -89,8 +89,8 @@
           <div class="h1 mb-3" style="text-align: center;">
             <i class="fa-solid fa-motorcycle"></i>
           </div>
-          <h3>Motorbike</h3>
-          <p>Please, enter your kilometers by using the motocycle.
+          <h3>MOTORCYCLE</h3>
+          <p class="in-box-text-CA">Please, enter your kilometers by using the motocycle.
           </p>
           <div class="section_container_buttons_carbon_app_new_entry_main">
             <a class="btn_carbon_app_new_entry_main" href="{{url_for('carbon_app.new_entry_motorbike')}}">New Entry</a>
@@ -98,10 +98,11 @@
         </div>    
         <div class="box">
           <div class="h1 mb-3" style="text-align: center;">
-            <i class="fa-solid fa-bicycle"></i>
+            <i class="fa-solid fa-bicycle"></i> <span><i
+              class="fa-solid fa-person-hiking"></i></span>
           </div>
-          <h3>Bicycle</h3>
-          <p>Please, enter your kilometers by using the bicycle.
+          <h3>BIKING/WALKING</h3>
+          <p class="in-box-text-CA">Please, enter your kilometers by either walking or using the bike
           </p>
           <div class="section_container_buttons_carbon_app_new_entry_main">
             <a class="btn_carbon_app_new_entry_main" href="{{url_for('carbon_app.new_entry_bicycle')}}">New Entry</a>
@@ -109,17 +110,26 @@
         </div>
         <div class="box">
           <div class="h1 mb-3" style="text-align: center;">
-            <i class="fa-solid fa-person-walking"></i>
+            <i class="fa-solid fa-train-tram"></i>
           </div>
-          <h3>Walk</h3>
-          <p>Please, enter your kilometers by walking.
+          <h3>TRAM</h3>
+          <p class="in-box-text-CA">Please, enter your kilometers by using the tram.
           </p>
           <div class="section_container_buttons_carbon_app_new_entry_main">
             <a class="btn_carbon_app_new_entry_main" href="{{url_for('carbon_app.new_entry_walk')}}">New Entry</a>
           </div> 
-        </div> 
-        <div class="box" style="background-color:#c5c8d9;">
-        </div>      
+    
+    </div>
+    <div class="box">
+      <div class="h1 mb-3" style="text-align: center;">
+        <i class="fa-solid fa-train"></i> 
+      </div>
+      <h3>TRAIN</h3>
+      <p class="in-box-text-CA">Please, enter your kilometers by using the train.
+      </p>
+      <div class="section_container_buttons_carbon_app_new_entry_main">
+        <a class="btn_carbon_app_new_entry_main" href="{{url_for('carbon_app.new_entry_bicycle')}}">New Entry</a>
+      </div> 
     </div>
   
     </div>          
