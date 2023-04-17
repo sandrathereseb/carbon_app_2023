@@ -19,11 +19,20 @@ body {
 body::-webkit-scrollbar {
   display: none;
 }
-
+h3{
+  font-weight: 600;
+}
+h2{
+  color: white;
+}
 p {
   margin: 10px 0;
   font-size: 18px;
   text-align: left;
+}
+.iconimg{
+  width: 400px;
+  height: 400px;
 }
 
 /* Local attributed css */
