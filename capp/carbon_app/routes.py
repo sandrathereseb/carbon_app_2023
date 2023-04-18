@@ -3,27 +3,20 @@ from capp.models import Transport
 from capp import db
 from datetime import timedelta, datetime
 from flask_login import login_required, current_user
-from capp.carbon_app.forms import BusForm, CarForm, PlaneForm, FerryForm, MotorbikeForm, BicycleForm, WalkForm
+from capp.carbon_app.forms import BusForm, CarForm, PlaneForm, FerryForm, MotorcycleForm, BikeWalkForm, TramForm, TrainForm
 
 carbon_app=Blueprint('carbon_app',__name__)
 
-efco2={'Bus':{'Diesel':0.10231,'CNG':0.08,'Petrol':0.10231,'No Fossil Fuel':0},
-    'Car':{'Petrol':0.18592,'Diesel':0.16453,'No Fossil Fuel':0},
-    'Plane':{'Petrol':0.24298},
-    'Ferry':{'Diesel':0.11131, 'CNG':0.1131, 'No Fossil Fuel':0},
-    'Motorbike':{'Petrol':0.09816,'No Fossil Fuel':0},
-    'Scooter':{'No Fossil Fuel':0},
-    'Bicycle':{'No Fossil Fuel':0},
-    'Walk':{'No Fossil Fuel':0}}
-efch4={'Bus':{'Diesel':2e-5,'CNG':2.5e-3,'Petrol':2e-5,'No Fossil Fuel':0},
-    'Car':{'Petrol':3.1e-4,'Diesel':3e-6,'No Fossil Fuel':0},
-    'Plane':{'Petrol':1.1e-4},
-    'Ferry':{'Diesel':3e-5, 'CNG':3e-5,'No Fossil Fuel':0},
-    'Motorbike':{'Petrol':2.1e-3,'No Fossil Fuel':0},
-    'Scooter':{'No Fossil Fuel':0},
-    'Bicycle':{'No Fossil Fuel':0},
-    'Walk':{'No Fossil Fuel':0}}
-
+efco2={
+    'Bus':{'Diesel':0.2,'CNG':0.11,'No Fossil Fuel':0},
+    'Car':{'Petrol':0.18,'Diesel':0.16,'No Fossil Fuel':0},
+    'Plane':{'Under 800km':0.157,'Between 800km and 3700km':0.13,'Over 3700km':0.105},
+    'Ferry':{'On Foot':0.18, 'By Car':1.29},
+    'Motorcycle':{'Petrol':0.09816,'No Fossil Fuel':0}, #not yet done, see document
+    'BikeWalk':{'No Fossil Fuel':0},
+    'Tram':{'Electric':0.042},
+    'Train':{'Electric':0.11}}
+#changed to here -Rune 18.4.23
 #Carbon app, main page
 @carbon_app.route('/carbon_app')
 @login_required
