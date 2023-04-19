@@ -12,6 +12,7 @@ class CarForm(FlaskForm):
   kms = FloatField('Kilometers', [InputRequired()])
   fuel_type = SelectField('Type of Fuel', [InputRequired()], 
     choices=[('Petrol', 'Petrol'), ('Diesel', 'Diesel'), ('No Fossil Fuel', 'No Fossil Fuel')])
+  passG = FloatField('Number of passengers', [InputRequired()]) #see if this works, this is the amount of passengers from the formula
   submit = SubmitField('Submit')  
 
 class PlaneForm(FlaskForm):
