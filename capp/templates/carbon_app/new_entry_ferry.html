@@ -3,12 +3,9 @@
 
 <section class="new_entry">
   <div class="container">
-      <div class="box">
-
-      </div>
       <div class="box">   
         <div class="h1 mb-3" style="text-align: center;">
-          <i class="fa-solid fa-ship"></i>
+          <i class="fa-solid fa-ferry"></i>
         </div>
         <h3>Ferry</h3>
         <p>
@@ -17,7 +14,7 @@
               Please, enter the number of kilometers.
             </li>
             <li>
-              Please, select the type of fuel
+              Please, select your mode of transport
             </li>
           </ol>
         </p>
@@ -40,16 +37,16 @@
                 </div>
 
                 <div class="form-group">
-                    {{ form.fuel_type.label(class="form-control-label") }}
-                    {% if form.fuel_type.errors %}
-                        {{ form.fuel_type(class="form-control form-control-lg is-invalid") }}
+                    {{ form.brought_on.label(class="form-control-label") }}
+                    {% if form.brought_on.errors %}
+                        {{ form.brought_on(class="form-control form-control-lg is-invalid") }}
                         <div class="invalid-feedback">
-                            {% for error in form.fuel_type.errors %}
+                            {% for error in form.brought_on.errors %}
                                 <span>{{ error }}</span>
                             {% endfor %}
                         </div>
                     {% else %}
-                        {{ form.fuel_type(class="form-control form-control-lg") }}
+                        {{ form.brought_on(class="form-control form-control-lg") }}
                     {% endif %}
                 </div>
 
@@ -60,9 +57,7 @@
               </div>
           </form>
       </div>
-      <div class="box">
 
-      </div>
   </div>
 </section> 
 

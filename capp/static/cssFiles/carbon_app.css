@@ -11,40 +11,47 @@ p {
   font-size: 18px;
   text-align: left;
 }
+
 h4 {
   font-size: 18px;
   text-align: left;
   font-weight: bold;
 }
+
 /* Section header */
 .section_header_carbon_app {
-  background-color:#899cc4;
+  background-color: #899cc4;
 }
+
 .header_carbon_app {
-  display: flex;  
+  display: flex;
   align-items: start;
 }
+
 .header_carbon_app .box {
   flex: 1;
   color: #fff;
   border-radius: 10px;
   margin: 20px 10px;
   padding: 15px 20px;
-  text-align:center;
+  text-align: center;
   align-items: center;
   justify-content: center;
 }
+
 .header_carbon_app .box:nth-of-type(1) {
-  flex-grow:2;
+  flex-grow: 2;
 }
+
 .header_carbon_app .box:nth-of-type(2) {
-  flex-grow:1;
+  flex-grow: 1;
 }
+
 .container_buttons_links_header_carbon_app {
   display: flex;
   justify-content: center;
   align-items: center;
-  flex-wrap:wrap;
+  flex-wrap: wrap;
   margin-top: 40px;
 }
 
@@ -54,15 +61,17 @@ h4 {
   background: #466fa6;
   color: #fff;
   display: flex;
-  justify-content:center;
-  align-items:center;
+  justify-content: center;
+  align-items: center;
 }
+
 /* Section carbon_app_new_entry_main */
 
 .carbon_app_new_entry_main {
-  display: flex;  
+  display: flex;
   align-items: start;
 }
+
 .carbon_app_new_entry_main .box {
   flex: 1;
   outline-style: solid;
@@ -73,7 +82,7 @@ h4 {
   color: black;
   margin: 20px 10px;
   padding: 15px 20px;
-  text-align:center;
+  text-align: center;
   align-items: center;
   justify-content: center;
   height: 350px;
@@ -83,10 +92,11 @@ h4 {
   display: flex;
   justify-content: center;
   align-items: center;
-  flex-wrap:wrap;
+  flex-wrap: wrap;
   padding: 0px 0px;
   margin: 0px 0px;
 }
+
 .btn_carbon_app_new_entry_main {
   padding: 10px 10px;
   margin: 10px 10px 10px 10px;
@@ -97,183 +107,145 @@ h4 {
   letter-spacing: 2px;
   font-size: 18px;
   background-color: #349370;
-  outline: 3px solid  #2a4359;
+  outline: 3px solid #2a4359;
+  outline-style: solid;
+  border-style: none;
 }
+
 .btn_carbon_app_new_entry_main:hover {
   color: #fff;
   background-color: #2a4359;
   outline: 3px solid #2a4359;
   text-decoration: none;
 }
+
 /*Container new_entry */
 .new_entry {
   display: flex;
-  }  
+}
+
 .new_entry .container {
   display: flex;
 }
+
 .new_entry .container {
+  align-items: center;
+  width: 100%;
   display: flex;
-  align-items: start;
-  justify-content: space-between;
+  justify-content: center;
 }
+
 .new_entry .container .box {
   flex: 1;
-  border-radius: 2px;
+  outline-style: solid;
+  outline-width: 4px;
+  outline-color: #349370;
+  background-color: #8bcb8f;
+  border-radius: 15px;
+  color: black;
   margin: 20px 10px;
   padding: 15px 20px;
-  text-align:center;
-}  
-.new_entry .container  .box:nth-of-type(1) {
-  flex-grow:1;
-  background: #fff;
-  border-radius: 10px;
-  margin: 0px 0px;
-  padding: 0px 0px;
-  text-align:left;
-}  
-.new_entry .container  .box:nth-of-type(2) {
-  flex-grow:6;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  height: 450px;
   max-width: 450px;
-  background: #568c63;
-  border-radius: 10px;
-  margin: 20px 10px;
-  padding: 15px 20px;
-  text-align:center;
-}  
-.new_entry .container  .box:nth-of-type(3) {
-  flex-grow:1;
-  background: #fff;
-  border-radius: 10px;
-  margin: 0px 0px;
-  padding: 0px 0px;
-  text-align:left;
 }
+
 /*Container table_main */
 .table_main {
   display: flex;
-  }  
+}
+
 .table_main .container {
   display: flex;
 }
+
 .table_main .container {
   display: flex;
   align-items: start;
   justify-content: space-between;
 }
+
 .table_main .container .box {
   flex: 1;
-  border-radius: 2px;
+  border-radius: 40px;
   margin: 20px 10px;
   padding: 15px 20px;
-  text-align:center;
-}  
-.table_main .container  .box:nth-of-type(1) {
-  flex-grow:1;
-  background: #fff;
-  border-radius: 10px;
-  margin: 0px 0px;
-  padding: 0px 0px;
-  text-align:left;
-}  
-.table_main .container  .box:nth-of-type(2) {
-  flex-grow:6;
-  background: #568c63;
-  border-radius: 10px;
-  margin: 20px 10px;
-  padding: 15px 20px;
-  text-align:center;
-}  
-.table_main .container  .box:nth-of-type(3) {
-  flex-grow:1;
-  background: #fff;
-  border-radius: 10px;
-  margin: 0px 0px;
-  padding: 0px 0px;
-  text-align:left;
+  text-align: center;
+  background-color: #8bcb8f;
+  outline-width: 4px;
+  outline-color: #349370;
+  outline-style: solid;
 }
+
 /*End container table_main*/
 /*Container main menu */
 .main_menu {
   display: flex;
-  }  
+}
+
 .main_menu .container {
   display: flex;
 }
+
 .main_menu .container {
   display: flex;
   align-items: start;
   justify-content: space-between;
 }
+
 .main_menu .container .box {
   flex: 1;
   border-radius: 2px;
   margin: 20px 10px;
   padding: 15px 20px;
-  text-align:center;
-  
-}  
-.main_menu .container  .box:nth-of-type(1) {
-  flex-grow:1;
-  background: #fff;
-  border-radius: 10px;
-  margin: 0px 0px;
-  padding: 0px 0px;
-  text-align:left;
-}  
-.main_menu .container  .box:nth-of-type(2) {
-  flex-grow:6;
-  max-width: 450px;
-  background: #568c63;
-  border-radius: 10px;
-  margin: 20px 10px;
-  padding: 15px 20px;
-  text-align:center;
-}  
-.main_menu .container  .box:nth-of-type(3) {
-  flex-grow:1;
-  background: #fff;
-  border-radius: 10px;
-  margin: 0px 0px;
-  padding: 0px 0px;
-  text-align:left;
+  text-align: center;
+
 }
+
 /*End container main menu*/
 /*Container buttons section main menu */
 .container_buttons_links_main_menu {
   display: flex;
   justify-content: center;
   align-items: center;
-  flex-wrap:wrap;
+  flex-wrap: wrap;
 }
-.container_buttons_links_main_menu a:hover {
-  color: #568c63;
+
+tr {
+  border-bottom: #445c93;
 }
+
 /*End container buttons section main menu*/
 
-@media (max-width:1288px) { 
+@media (max-width:1288px) {
   .header_carbon_app {
     flex-direction: column;
     text-align: center;
     align-items: center;
     justify-content: center;
-  } 
+  }
+
   .carbon_app_new_entry_main {
     flex-direction: column;
     align-items: center;
 
-  } 
+  }
+
   .new_entry .container {
     flex-direction: column;
     padding: 10px;
     text-align: center;
   }
+
   .table_main .container {
     flex-direction: column;
     padding: 10px;
     text-align: center;
   }
-  .in-box-text-CA{
+
+  .in-box-text-CA {
     text-align: center;
   }
 }

@@ -3,27 +3,18 @@ from capp.models import Transport
 from capp import db
 from datetime import timedelta, datetime
 from flask_login import login_required, current_user
-from capp.carbon_app.forms import BusForm, CarForm, PlaneForm, FerryForm, MotorbikeForm, BicycleForm, WalkForm
+from capp.carbon_app.forms import BusForm, CarForm, PlaneForm, FerryForm, MotorbikeForm, BikeWalkForm, TramForm, TrainForm
 
 carbon_app=Blueprint('carbon_app',__name__)
 
-efco2={'Bus':{'Diesel':0.10231,'CNG':0.08,'Petrol':0.10231,'No Fossil Fuel':0},
-    'Car':{'Petrol':0.18592,'Diesel':0.16453,'No Fossil Fuel':0},
-    'Plane':{'Petrol':0.24298},
-    'Ferry':{'Diesel':0.11131, 'CNG':0.1131, 'No Fossil Fuel':0},
-    'Motorbike':{'Petrol':0.09816,'No Fossil Fuel':0},
-    'Scooter':{'No Fossil Fuel':0},
-    'Bicycle':{'No Fossil Fuel':0},
-    'Walk':{'No Fossil Fuel':0}}
-efch4={'Bus':{'Diesel':2e-5,'CNG':2.5e-3,'Petrol':2e-5,'No Fossil Fuel':0},
-    'Car':{'Petrol':3.1e-4,'Diesel':3e-6,'No Fossil Fuel':0},
-    'Plane':{'Petrol':1.1e-4},
-    'Ferry':{'Diesel':3e-5, 'CNG':3e-5,'No Fossil Fuel':0},
-    'Motorbike':{'Petrol':2.1e-3,'No Fossil Fuel':0},
-    'Scooter':{'No Fossil Fuel':0},
-    'Bicycle':{'No Fossil Fuel':0},
-    'Walk':{'No Fossil Fuel':0}}
-
+efco2={
+    'Bus':{'Diesel':0.2,'CNG':0.11,'No Fossil Fuel':0},
+    'Car':{'Petrol':0.18,'Diesel':0.16,'No Fossil Fuel':0},
+    'Plane':{'Under 800km':0.157,'Between 800km and 3700km':0.13,'Over 3700km':0.105},
+    'Ferry':{'On Foot':0.18, 'By Car':1.29}, #check document if it's done. weird shit happened
+    'Motorbike':{'Petrol':2.31,'Diesel':2.68,'No Fossil Fuel':0},
+    'Tram':{'Electric':0.0421},
+    'Train':{'Electric':0.11}} # yeah check the doc for this as well looks SUPER scuffed
 #Carbon app, main page
 @carbon_app.route('/carbon_app')
 @login_required
@@ -40,17 +31,12 @@ def new_entry_bus():
         fuel = form.fuel_type.data
         transport = 'Bus'
         # kms = request.form['kms']
-        # fuel = request.form['fuel_type']
+        # fuel = request.form['fuel_type'] find out why this is commented out
 
         co2 = float(kms) * efco2[transport][fuel]
-        ch4 = float(kms) * efch4[transport][fuel]
-        total = co2+ch4
-
         co2 = float("{:.2f}".format(co2))
-        ch4 = float("{:.2f}".format(ch4))
-        total = float("{:.2f}".format(total))
 
-        emissions = Transport(kms=kms, transport=transport, fuel=fuel, co2=co2, ch4=ch4, total=total, author=current_user)
+        emissions = Transport(kms=kms, transport=transport, fuel=fuel, co2=co2,  author=current_user)
         db.session.add(emissions)
         db.session.commit()
         return redirect(url_for('carbon_app.your_data'))
@@ -69,14 +55,10 @@ def new_entry_car():
         # fuel = request.form['fuel_type']
 
         co2 = float(kms) * efco2[transport][fuel]
-        ch4 = float(kms) * efch4[transport][fuel]
-        total = co2+ch4
 
         co2 = float("{:.2f}".format(co2))
-        ch4 = float("{:.2f}".format(ch4))
-        total = float("{:.2f}".format(total))
 
-        emissions = Transport(kms=kms, transport=transport, fuel=fuel, co2=co2, ch4=ch4, total=total, author=current_user)
+        emissions = Transport(kms=kms, transport=transport, fuel=fuel, co2=co2,  author=current_user)
         db.session.add(emissions)
         db.session.commit()
         return redirect(url_for('carbon_app.your_data'))
@@ -87,22 +69,23 @@ def new_entry_car():
 @login_required
 def new_entry_plane():
     form = PlaneForm()
-    if form.validate_on_submit():
+    if form.validate_on_submit(): #make if/else staatements here on the different lengths
         kms = form.kms.data
-        fuel = form.fuel_type.data
+        if (float(kms)< 800.00):
+            fuel ='Under 800km'
+        
+        elif (float(kms)> 3700.00):
+            fuel ='Over 3700km'
+        
+        else:
+            fuel ='Between 800km and 3700km'
+
         transport = 'Plane'
-        # kms = request.form['kms']
-        # fuel = request.form['fuel_type']
 
         co2 = float(kms) * efco2[transport][fuel]
-        ch4 = float(kms) * efch4[transport][fuel]
-        total = co2+ch4
-
         co2 = float("{:.2f}".format(co2))
-        ch4 = float("{:.2f}".format(ch4))
-        total = float("{:.2f}".format(total))
 
-        emissions = Transport(kms=kms, transport=transport, fuel=fuel, co2=co2, ch4=ch4, total=total, author=current_user)
+        emissions = Transport(kms=kms, transport=transport, fuel='Aviation Kerosene', co2=co2,  author=current_user)
         db.session.add(emissions)
         db.session.commit()
         return redirect(url_for('carbon_app.your_data'))
@@ -115,20 +98,16 @@ def new_entry_ferry():
     form = FerryForm()
     if form.validate_on_submit():
         kms = form.kms.data
-        fuel = form.fuel_type.data
+        fuel = form.brought_on.data
         transport = 'Ferry'
         # kms = request.form['kms']
         # fuel = request.form['fuel_type']
 
         co2 = float(kms) * efco2[transport][fuel]
-        ch4 = float(kms) * efch4[transport][fuel]
-        total = co2+ch4
 
         co2 = float("{:.2f}".format(co2))
-        ch4 = float("{:.2f}".format(ch4))
-        total = float("{:.2f}".format(total))
-
-        emissions = Transport(kms=kms, transport=transport, fuel=fuel, co2=co2, ch4=ch4, total=total, author=current_user)
+        transport = 'Ferry, '+ fuel
+        emissions = Transport(kms=kms, transport=transport, fuel='Heavy Fuel Oil', co2=co2,  author=current_user)
         db.session.add(emissions)
         db.session.commit()
         return redirect(url_for('carbon_app.your_data'))
@@ -147,70 +126,76 @@ def new_entry_motorbike():
         # fuel = request.form['fuel_type']
 
         co2 = float(kms) * efco2[transport][fuel]
-        ch4 = float(kms) * efch4[transport][fuel]
-        total = co2+ch4
 
         co2 = float("{:.2f}".format(co2))
-        ch4 = float("{:.2f}".format(ch4))
-        total = float("{:.2f}".format(total))
 
-        emissions = Transport(kms=kms, transport=transport, fuel=fuel, co2=co2, ch4=ch4, total=total, author=current_user)
+        emissions = Transport(kms=kms, transport=transport, fuel=fuel, co2=co2,  author=current_user)
         db.session.add(emissions)
         db.session.commit()
         return redirect(url_for('carbon_app.your_data'))
     return render_template('carbon_app/new_entry_motorbike.html', title='new entry motorbike', form=form) 
 
-#New entry bicycle
-@carbon_app.route('/carbon_app/new_entry_bicycle', methods=['GET','POST'])
+#New entry Biking or Walking
+@carbon_app.route('/carbon_app/new_entry_bikewalk', methods=['GET','POST'])
 @login_required
-def new_entry_bicycle():
-    form = BicycleForm()
+def new_entry_BikeWalk():
+    form = BikeWalkForm()
     if form.validate_on_submit():
         kms = form.kms.data
-        fuel = form.fuel_type.data
-        transport = 'Bicycle'
+        transport = 'Biking / Walking'
+
+        co2 = float(kms) * 0
+        co2 = float("{:.2f}".format(co2))
+
+        emissions = Transport(kms=kms, transport=transport, fuel='No Fossil Fuel', co2=co2,  author=current_user)
+        db.session.add(emissions)
+        db.session.commit()
+        return redirect(url_for('carbon_app.your_data'))
+    return render_template('carbon_app/new_entry_bikewalk.html', title='new entry Biking or Walking', form=form)
+
+#New entry Tram
+@carbon_app.route('/carbon_app/new_entry_tram', methods=['GET','POST'])
+@login_required
+def new_entry_tram():
+    form = TramForm()
+    if form.validate_on_submit():
+        kms = form.kms.data
+        fuel = 'Electric'
+        transport = 'Tram'
         # kms = request.form['kms']
         # fuel = request.form['fuel_type']
 
         co2 = float(kms) * efco2[transport][fuel]
-        ch4 = float(kms) * efch4[transport][fuel]
-        total = co2+ch4
 
         co2 = float("{:.2f}".format(co2))
-        ch4 = float("{:.2f}".format(ch4))
-        total = float("{:.2f}".format(total))
 
-        emissions = Transport(kms=kms, transport=transport, fuel=fuel, co2=co2, ch4=ch4, total=total, author=current_user)
+        emissions = Transport(kms=kms, transport=transport, fuel=fuel, co2=co2,  author=current_user)
         db.session.add(emissions)
         db.session.commit()
         return redirect(url_for('carbon_app.your_data'))
-    return render_template('carbon_app/new_entry_bicycle.html', title='new entry bicycle', form=form)
+    return render_template('carbon_app/new_entry_tram.html', title='new entry tram', form=form)
 
-#New entry walk
-@carbon_app.route('/carbon_app/new_entry_walk', methods=['GET','POST'])
+#New entry Train
+@carbon_app.route('/carbon_app/new_entry_train', methods=['GET','POST'])
 @login_required
-def new_entry_walk():
-    form = WalkForm()
+def new_entry_train():
+    form = TrainForm()
     if form.validate_on_submit():
         kms = form.kms.data
-        fuel = form.fuel_type.data
-        transport = 'Walk'
+        fuel = 'Electric'
+        transport = 'Train'
         # kms = request.form['kms']
         # fuel = request.form['fuel_type']
 
         co2 = float(kms) * efco2[transport][fuel]
-        ch4 = float(kms) * efch4[transport][fuel]
-        total = co2+ch4
 
         co2 = float("{:.2f}".format(co2))
-        ch4 = float("{:.2f}".format(ch4))
-        total = float("{:.2f}".format(total))
 
-        emissions = Transport(kms=kms, transport=transport, fuel=fuel, co2=co2, ch4=ch4, total=total, author=current_user)
+        emissions = Transport(kms=kms, transport=transport, fuel=fuel, co2=co2,  author=current_user)
         db.session.add(emissions)
         db.session.commit()
         return redirect(url_for('carbon_app.your_data'))
-    return render_template('carbon_app/new_entry_walk.html', title='new entry walk', form=form)
+    return render_template('carbon_app/new_entry_train.html', title='new entry train', form=form)
 
 #Your data
 @carbon_app.route('/carbon_app/your_data')

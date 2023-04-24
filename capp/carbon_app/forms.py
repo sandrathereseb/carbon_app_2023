@@ -5,7 +5,7 @@ from wtforms.validators import InputRequired
 class BusForm(FlaskForm):
   kms = FloatField('Kilometers', [InputRequired()])
   fuel_type = SelectField('Type of Fuel', [InputRequired()], 
-    choices=[('Diesel', 'Diesel'), ('CNG', 'CNG'), ('Petrol', 'Petrol'), ('No Fossil Fuel', 'No Fossil Fuel')])
+    choices=[('Diesel', 'Diesel'), ('CNG', 'CNG'), ('No Fossil Fuel', 'No Fossil Fuel')])
   submit = SubmitField('Submit')
 
 class CarForm(FlaskForm):
@@ -16,30 +16,28 @@ class CarForm(FlaskForm):
 
 class PlaneForm(FlaskForm):
   kms = FloatField('Kilometers', [InputRequired()])
-  fuel_type = SelectField('Type of Fuel', [InputRequired()], 
-    choices=[('Petrol', 'Petrol')])
   submit = SubmitField('Submit')
   
 class FerryForm(FlaskForm):
   kms = FloatField('Kilometers', [InputRequired()])
-  fuel_type = SelectField('Type of Fuel', [InputRequired()], 
-    choices=[('Diesel', 'Diesel'), ('CNG', 'CNG'), ('No Fossil Fuel', 'No Fossil Fuel')])
+  brought_on = SelectField('How are you riding the ferry', [InputRequired()],
+    choices=[('On Foot', 'On Foot'), ('By Car', 'By Car')])
   submit = SubmitField('Submit')  
 
-class MotorbikeForm(FlaskForm):
+class MotorbikeForm(FlaskForm): #not yet done, see document
   kms = FloatField('Kilometers', [InputRequired()])
   fuel_type = SelectField('Type of Fuel', [InputRequired()], 
-    choices=[('Petrol', 'Petrol'), ('No Fossil Fuel', 'No Fossil Fuel')])
+    choices=[('Petrol', 'Petrol'),('Diesel', 'Diesel'), ('No Fossil Fuel', 'No Fossil Fuel')])
   submit = SubmitField('Submit')
 
-class BicycleForm(FlaskForm):
+class BikeWalkForm(FlaskForm):
   kms = FloatField('Kilometers', [InputRequired()])
-  fuel_type = SelectField('Type of Fuel', [InputRequired()], 
-    choices=[('No Fossil Fuel', 'No Fossil Fuel')])
   submit = SubmitField('Submit')  
 
-class WalkForm(FlaskForm):
+class TramForm(FlaskForm):
   kms = FloatField('Kilometers', [InputRequired()])
-  fuel_type = SelectField('Type of Fuel', [InputRequired()], 
-    choices=[('No Fossil Fuel', 'No Fossil Fuel')])
+  submit = SubmitField('Submit')
+
+class TrainForm(FlaskForm):
+  kms = FloatField('Kilometers', [InputRequired()])
   submit = SubmitField('Submit')  
