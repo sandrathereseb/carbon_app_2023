@@ -1,139 +1,145 @@
 {% extends "layout.html" %}
 {% block content %}
 
-    <!-- Header -->
-    <section class="section_header_carbon_app">
-        <div class="container">
-    
-        <div class="header_carbon_app">
-            <div class="box"> 
-            <h1 style="font-size:55px;"><span class="text-logo"> Carbon App Calculator</span></h1>
-            <p style="text-align:left;">
-                Enter our carbon emission calculator app - an innovative tool that allows you to calculate your carbon emissions in a quick and easy way. By simply inputting data about your daily habits and activities, you can get a comprehensive breakdown of your carbon emissions, as well as recommendations for reducing them. With this app, you can take control of your carbon footprint and make informed decisions about your lifestyle, helping to reduce your impact on the environment. Whether you're an individual looking to live a more sustainable lifestyle or a business looking to reduce your carbon footprint, this app can help you take meaningful steps towards a more sustainable future.
-            </p>
-            <div class="container_buttons_links_header_carbon_app">
-                <div class="btn">
-                    <a href="{{url_for('methodology.methodology_home')}}" class="btn_carbon_app_new_entry_main">Methodology</a>
-                </div>
-                <div class="btn">
-                    <a href="{{url_for('carbon_app.your_data')}}" class="btn_carbon_app_new_entry_main">Your data</a>
-                </div>
-            </div>  
-            </div>
-            <div class="box">
-                <img src="{{url_for('static', filename='icons/carbon_calculator.gif')}}" class="iconimg" alt="image of a calculator"/>
-            </div>
-        </div>
-        
-        </div>
-    </section> 
+<!-- Header -->
+<section class="section_header_carbon_app">
+  <div class="container">
 
-    <!-- carbon_app_new_entry_main -->
-    <section class="section_carbon_app_new_entry_main">
-    <div class="container">
-  
-      <div class="carbon_app_new_entry_main" style="display:block;">
-        <br>
-        <h2 style="text-align:center;">Please, select your mean of transportation in the boxes below</h2>     
+    <div class="header_carbon_app">
+      <div class="box">
+        <h1 style="font-size:55px;"><span class="text-logo"> Carbon App Calculator</span></h1>
+        <p style="text-align:left;">
+          Enter our carbon emission calculator app - an innovative tool that allows you to calculate your carbon
+          emissions in a quick and easy way. By simply inputting data about your daily habits and activities, you can
+          get a comprehensive breakdown of your carbon emissions, as well as recommendations for reducing them. With
+          this app, you can take control of your carbon footprint and make informed decisions about your lifestyle,
+          helping to reduce your impact on the environment. Whether you're an individual looking to live a more
+          sustainable lifestyle or a business looking to reduce your carbon footprint, this app can help you take
+          meaningful steps towards a more sustainable future.
+        </p>
+        <div class="container_buttons_links_header_carbon_app">
+          <div class="btn">
+            <a href="{{url_for('methodology.methodology_home')}}" class="btn_carbon_app_new_entry_main">Methodology</a>
+          </div>
+          <div class="btn">
+            <a href="{{url_for('carbon_app.your_data')}}" class="btn_carbon_app_new_entry_main">Your data</a>
+          </div>
+        </div>
       </div>
-  
-      <div class="carbon_app_new_entry_main">
-          <div class="box">
-            <div class="h1 mb-3" style="text-align: center;">
-                <i class="fa-solid fa-bus"></i>
-            </div>
-            <h3>BUS</h3>
-            <p class="in-box-text-CA">Please, enter your kilometers by using the bus.
-            </p>
-            <div class="section_container_buttons_carbon_app_new_entry_main">
-              <a class="btn_carbon_app_new_entry_main" href="{{url_for('carbon_app.new_entry_bus')}}">New Entry</a>
-            </div> 
-          </div>
-          <div class="box">
-            <div class="h1 mb-3" style="text-align: center;">
-                <i class="fa-solid fa-car-side"></i>
-            </div>
-            <h3>CAR</h3>
-            <p class="in-box-text-CA">Please, enter your kilometers by using the car.
-            </p>
-            <div class="section_container_buttons_carbon_app_new_entry_main">
-              <a class="btn_carbon_app_new_entry_main" href="{{url_for('carbon_app.new_entry_car')}}">New Entry</a>
-            </div> 
-          </div>           
-          <div class="box">
-            <div class="h1 mb-3" style="text-align: center;">
-                <i class="fa-solid fa-plane-departure"></i>
-            </div>
-            <h3>PLANE</h3>
-            <p class="in-box-text-CA">Please, enter your kilometers by using the plane.
-            </p>
-            <div class="section_container_buttons_carbon_app_new_entry_main">
-              <a class="btn_carbon_app_new_entry_main" href="{{url_for('carbon_app.new_entry_plane')}}">New Entry</a>
-            </div> 
-          </div>
-          <div class="box">
-            <div class="h1 mb-3" style="text-align: center;">
-                <i class="fa-solid fa-ferry"></i>
-            </div>
-            <h3>FERRY</h3>
-            <p class="in-box-text-CA">Please, enter your kilometers by using the ferry.
-            </p>
-            <div class="section_container_buttons_carbon_app_new_entry_main">
-              <a class="btn_carbon_app_new_entry_main" href="{{url_for('carbon_app.new_entry_ferry')}}">New Entry</a>
-            </div> 
-          </div>      
+      <div class="box">
+        <img src="{{url_for('static', filename='icons/carbon_calculator.gif')}}" class="iconimg"
+          alt="image of a calculator" />
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- carbon_app_new_entry_main -->
+<section class="section_carbon_app_new_entry_main">
+  <div class="container">
+
+    <div class="carbon_app_new_entry_main" style="display:block;">
+      <br>
+      <h2 style="text-align:center;">Please, select your mean of transportation in the boxes below</h2>
+    </div>
+
+    <div class="carbon_app_new_entry_main">
+      <div class="box">
+        <div class="h1 mb-3" style="text-align: center;">
+          <i class="fa-solid fa-bus"></i>
+        </div>
+        <h3>BUS</h3>
+        <p class="in-box-text-CA">Please, enter your kilometers by using the bus.
+        </p>
+        <div class="section_container_buttons_carbon_app_new_entry_main">
+          <a class="btn_carbon_app_new_entry_main" href="{{url_for('carbon_app.new_entry_bus')}}">New Entry</a>
+        </div>
+      </div>
+      <div class="box">
+        <div class="h1 mb-3" style="text-align: center;">
+          <i class="fa-solid fa-car-side"></i>
+        </div>
+        <h3>CAR</h3>
+        <p class="in-box-text-CA">Please, enter your kilometers by using the car.
+        </p>
+        <div class="section_container_buttons_carbon_app_new_entry_main">
+          <a class="btn_carbon_app_new_entry_main" href="{{url_for('carbon_app.new_entry_car')}}">New Entry</a>
+        </div>
+      </div>
+      <div class="box">
+        <div class="h1 mb-3" style="text-align: center;">
+          <i class="fa-solid fa-plane-departure"></i>
+        </div>
+        <h3>PLANE</h3>
+        <p class="in-box-text-CA">Please, enter your kilometers by using the plane.
+        </p>
+        <div class="section_container_buttons_carbon_app_new_entry_main">
+          <a class="btn_carbon_app_new_entry_main" href="{{url_for('carbon_app.new_entry_plane')}}">New Entry</a>
+        </div>
+      </div>
+      <div class="box">
+        <div class="h1 mb-3" style="text-align: center;">
+          <i class="fa-solid fa-ferry"></i>
+        </div>
+        <h3>FERRY</h3>
+        <p class="in-box-text-CA">Please, enter your kilometers by using the ferry.
+        </p>
+        <div class="section_container_buttons_carbon_app_new_entry_main">
+          <a class="btn_carbon_app_new_entry_main" href="{{url_for('carbon_app.new_entry_ferry')}}">New Entry</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="carbon_app_new_entry_main">
+      <div class="box">
+        <div class="h1 mb-3" style="text-align: center;">
+          <i class="fa-solid fa-motorcycle"></i>
+        </div>
+        <h3>MOTORBIKE</h3>
+        <p class="in-box-text-CA">Please, enter your kilometers by using the motorbike.
+        </p>
+        <div class="section_container_buttons_carbon_app_new_entry_main">
+          <a class="btn_carbon_app_new_entry_main" href="{{url_for('carbon_app.new_entry_motorbike')}}">New Entry</a>
+        </div>
+      </div>
+      <div class="box">
+        <div class="h1 mb-3" style="text-align: center;">
+          <i class="fa-solid fa-bicycle"></i> <span><i class="fa-solid fa-person-hiking"></i></span>
+        </div>
+        <h3>BIKING/WALKING</h3>
+        <p class="in-box-text-CA">Please, enter your kilometers by either walking or using the bike
+        </p>
+        <div class="section_container_buttons_carbon_app_new_entry_main">
+          <a class="btn_carbon_app_new_entry_main" href="{{url_for('carbon_app.new_entry_BikeWalk')}}">New Entry</a>
+        </div>
+      </div>
+      <div class="box">
+        <div class="h1 mb-3" style="text-align: center;">
+          <i class="fa-solid fa-train-tram"></i>
+        </div>
+        <h3>TRAM</h3>
+        <p class="in-box-text-CA">Please, enter your kilometers by using the tram.
+        </p>
+        <div class="section_container_buttons_carbon_app_new_entry_main">
+          <a class="btn_carbon_app_new_entry_main" href="{{url_for('carbon_app.new_entry_tram')}}">New Entry</a>
+        </div>
+
+      </div>
+      <div class="box">
+        <div class="h1 mb-3" style="text-align: center;">
+          <i class="fa-solid fa-train"></i>
+        </div>
+        <h3>TRAIN</h3>
+        <p class="in-box-text-CA">Please, enter your kilometers by using the train.
+        </p>
+        <div class="section_container_buttons_carbon_app_new_entry_main">
+          <a class="btn_carbon_app_new_entry_main" href="{{url_for('carbon_app.new_entry_train')}}">New Entry</a>
+        </div>
       </div>
 
-      <div class="carbon_app_new_entry_main">
-        <div class="box">
-          <div class="h1 mb-3" style="text-align: center;">
-            <i class="fa-solid fa-motorcycle"></i>
-          </div>
-          <h3>MOTORCYCLE</h3>
-          <p class="in-box-text-CA">Please, enter your kilometers by using the motocycle.
-          </p>
-          <div class="section_container_buttons_carbon_app_new_entry_main">
-            <a class="btn_carbon_app_new_entry_main" href="{{url_for('carbon_app.new_entry_motorbike')}}">New Entry</a>
-          </div> 
-        </div>    
-        <div class="box">
-          <div class="h1 mb-3" style="text-align: center;">
-            <i class="fa-solid fa-bicycle"></i> <span><i
-              class="fa-solid fa-person-hiking"></i></span>
-          </div>
-          <h3>BIKING/WALKING</h3>
-          <p class="in-box-text-CA">Please, enter your kilometers by either walking or using the bike
-          </p>
-          <div class="section_container_buttons_carbon_app_new_entry_main">
-            <a class="btn_carbon_app_new_entry_main" href="{{url_for('carbon_app.new_entry_bicycle')}}">New Entry</a>
-          </div> 
-        </div>
-        <div class="box">
-          <div class="h1 mb-3" style="text-align: center;">
-            <i class="fa-solid fa-train-tram"></i>
-          </div>
-          <h3>TRAM</h3>
-          <p class="in-box-text-CA">Please, enter your kilometers by using the tram.
-          </p>
-          <div class="section_container_buttons_carbon_app_new_entry_main">
-            <a class="btn_carbon_app_new_entry_main" href="{{url_for('carbon_app.new_entry_walk')}}">New Entry</a>
-          </div> 
-    
     </div>
-    <div class="box">
-      <div class="h1 mb-3" style="text-align: center;">
-        <i class="fa-solid fa-train"></i> 
-      </div>
-      <h3>TRAIN</h3>
-      <p class="in-box-text-CA">Please, enter your kilometers by using the train.
-      </p>
-      <div class="section_container_buttons_carbon_app_new_entry_main">
-        <a class="btn_carbon_app_new_entry_main" href="{{url_for('carbon_app.new_entry_bicycle')}}">New Entry</a>
-      </div> 
-    </div>
-  
-    </div>          
-    </section>
-       
+</section>
+
 
 {% endblock content %}
