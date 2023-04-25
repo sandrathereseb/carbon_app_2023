@@ -51,7 +51,7 @@
                         <td>{{ entry.kms }}</td>
                         <td>{{ entry.transport }}</td>
                         <td>{{ entry.fuel }}</td>
-                        <td>{{ entry.co2 }}</td>
+                        <td>{{ entry.co2 }} kg</td>
                         <td><a href="{{ url_for('carbon_app.delete_emission', entry_id = entry.id) }}"
                                 class="btn btn-danger btn-sm">Delete</a></td>
                     </tr>
