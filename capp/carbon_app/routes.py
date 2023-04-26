@@ -8,11 +8,11 @@ from capp.carbon_app.forms import BusForm, CarForm, PlaneForm, FerryForm, Motorb
 carbon_app=Blueprint('carbon_app',__name__)
 
 efco2={
-    'Bus':{'Diesel':0.2,'CNG':0.11,'No Fossil Fuel':0},
+    'Bus':{'Diesel':0.09,'CNG':0.11,'No Fossil Fuel':0},
     'Car':{'Petrol':0.18,'Diesel':0.16,'No Fossil Fuel':0},
     'Plane':{'Under 800km':0.157,'Between 800km and 3700km':0.13,'Over 3700km':0.105},
-    'Ferry':{'On Foot':0.18, 'By Car':1.29}, #check document if it's done. weird shit happened
-    'Motorbike':{'Petrol':2.31,'Diesel':2.68,'No Fossil Fuel':0},
+    'Ferry':{'On Foot':0.0187, 'By Car':0.12952}, #check document if it's done. weird shit happened
+    'Motorbike':{'Petrol':0.11},
     'Tram':{'Electric':0.0421},
     'Train':{'Electric':0.11}} # yeah check the doc for this as well looks SUPER scuffed
 #Carbon app, main page
@@ -120,16 +120,15 @@ def new_entry_motorbike():
     form = MotorbikeForm()
     if form.validate_on_submit():
         kms = form.kms.data
-        fuel = form.fuel_type.data
         transport = 'Motorbike'
         # kms = request.form['kms']
         # fuel = request.form['fuel_type']
 
-        co2 = float(kms) * efco2[transport][fuel]
+        co2 = float(kms) * 0.11
 
         co2 = float("{:.2f}".format(co2))
 
-        emissions = Transport(kms=kms, transport=transport, fuel=fuel, co2=co2,  author=current_user)
+        emissions = Transport(kms=kms, transport=transport, fuel='Petrol', co2=co2,  author=current_user)
         db.session.add(emissions)
         db.session.commit()
         return redirect(url_for('carbon_app.your_data'))
