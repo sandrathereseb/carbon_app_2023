@@ -26,8 +26,6 @@ class FerryForm(FlaskForm):
 
 class MotorbikeForm(FlaskForm): #not yet done, see document
   kms = FloatField('Kilometers', [InputRequired()])
-  fuel_type = SelectField('Type of Fuel', [InputRequired()], 
-    choices=[('Petrol', 'Petrol'),('Diesel', 'Diesel'), ('No Fossil Fuel', 'No Fossil Fuel')])
   submit = SubmitField('Submit')
 
 class BikeWalkForm(FlaskForm):
