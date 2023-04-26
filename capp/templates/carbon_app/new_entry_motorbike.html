@@ -10,11 +10,8 @@
       <h3>Motorbike</h3>
       <p>
         <ol style="text-align: left;">
-          <li>
+          <li style="list-style-type: disc;">
             Please, enter the number of kilometers.
-          </li>
-          <li>
-            Please, select the type of fuel
           </li>
         </ol>
       </p>
@@ -33,20 +30,6 @@
             </div>
             {% else %}
             {{ form.kms(class="form-control form-control-lg") }}
-            {% endif %}
-          </div>
-
-          <div class="form-group">
-            {{ form.fuel_type.label(class="form-control-label") }}
-            {% if form.fuel_type.errors %}
-            {{ form.fuel_type(class="form-control form-control-lg is-invalid") }}
-            <div class="invalid-feedback">
-              {% for error in form.fuel_type.errors %}
-              <span>{{ error }}</span>
-              {% endfor %}
-            </div>
-            {% else %}
-            {{ form.fuel_type(class="form-control form-control-lg") }}
             {% endif %}
           </div>
 
