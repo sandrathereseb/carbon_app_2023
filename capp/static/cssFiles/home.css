@@ -5,12 +5,29 @@
   font-size: 18px;
   text-align: left;
 }
+.text-logo2 {
+  color: white;
+  font-size: 55px;
+  font-weight: bolder;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+}
 
 /* Section header_home */
 .section_header_home {
   background-color: #899cc4;
+  height: 100vh;
+  position: relative;
 }
-
+.boottm{
+bottom: 100px;
+position: absolute;
+color: white;
+text-align: center;
+text-transform: uppercase;
+left: 40%;
+}
 .header_home {
   display: flex;
   align-items: start;
