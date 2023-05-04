@@ -8,15 +8,39 @@
         <div class="box">
             <div class="container_buttons_links_main_menu">
                 <div class="btn">
-                    <a href="{{ url_for('carbon_app.carbon_app_home') }}" class="btn_carbon_app_new_entry_main">New
-                        Entry</a>
+                    <a href="{{ url_for('carbon_app.carbon_app_home') }}" class="btn_carbon_app_new_entry_main">New Entry</a>
                 </div>
             </div>
         </div>
 
     </div>
 </section>
+<section class="graphbox">
+ 
+    <!-- Two Emissions Graph Section -->
+    <section class="two_emissions_graphs">
+        <div class="container">
+            <div class="box">
+                <canvas id="emissions_by_transport"></canvas>
+            </div>
+            <div class="box">
+                <canvas id="over_time_emissions"></canvas> 
+            </div>
+        </div>
+    </section> 
 
+    <!-- Two Emissions Graph Section -->
+    <section class="two_emissions_graphs">
+        <div class="container">
+            <div class="box">
+                <canvas id="kms_by_transport"></canvas>
+            </div>
+            <div class="box">
+                <canvas id="over_time_kms"></canvas>
+            </div>
+        </div>
+    </section> 
+</section>
 <!-- Table Section -->
 <section class="table_main">
     <div class="container">
@@ -63,4 +87,157 @@
 </section>
 
 
+{% block javascript %}
+
+ <script>
+ // Emissions
+ let emission_transport_data = JSON.parse({{ emissions_by_transport | tojson }})    
+        Chart.scaleService.updateScaleDefaults('linear', {
+                ticks: {
+                    min: 0
+                }
+        });
+    
+    
+        let emissions_by_transport_chart = new Chart(emissions_by_transport, {
+                type: 'pie',
+                data: {
+                labels: ['','Bus', 'Car', 'Ferry', 'Motorbike', 'Plane', 'Tram', 'Train', 'Biking and Walking'],
+                    datasets: [{
+                        data: emission_transport_data,
+                        backgroundColor:['#8bcb8f', '#f2e3b6', '#f2c299',
+                            '#f2935c', '#5fd9cd', '#f2d95c', '#f2b84b', '#f27979','#994BD9' ], 
+    
+                        borderWidth: 0,
+                        hoverBorderColor: "black",
+                        hoverBorderWidth: 2,
+                        hoverBackgroundColor: 'rgba(154, 245, 140)',
+                        pointHoverRadius: 5
+                    }],
+                },
+                options: {
+                        title: {
+                            display: true,
+                                text: "Emissions by type of transport (in kgco2 , last 5 days)",
+                                fontColor: "#445c93",
+                                fontSize: 20,
+                        },
+                        legend: {
+                            position: "right",
+                        labels: {
+                                fontColor: "#445c93"
+                            },
+                            display: true,
+                        },
+    
+                        elements: {
+                            hitRadius: 3,
+                        }
+                }
+            })
+
+        over_time_emissions = JSON.parse({{over_time_emissions | tojson}})
+        labels = JSON.parse({{ dates_label  | tojson}})
+
+        new Chart(document.getElementById("over_time_emissions"), {
+                type: "line",
+                data:
+                {
+                    labels: labels,
+                    datasets: [
+                        {
+                        label: "Individual Emissions (in kgco2 , last 5 days)",                           
+                        data: over_time_emissions,
+                        
+                        borderColor: '#5fd9cd',
+                        lineTension: 0.1
+                        }
+                ]
+                },                    
+                options: {
+                    legend: {
+
+                        labels: {
+                                fontColor: "#445c93",
+                                fontSize: 15,
+                            },
+                        },
+                }
+            });  
+            
+        // Kilometers
+        let kms_transport_data = JSON.parse({{ kms_by_transport | tojson }})    
+        Chart.scaleService.updateScaleDefaults('linear', {
+                ticks: {
+                    min: 0
+                }
+        });
+        let kms_by_transport_chart = new Chart(kms_by_transport, {
+                type: 'pie',
+                data: {
+                labels: ['','Bus', 'Car', 'Ferry', 'Motorbike', 'Plane', 'Tram', 'Train', 'Biking and Walking'],
+                    datasets: [{
+                        label: "Income Vs Expenses",
+                        data: kms_transport_data,
+                        backgroundColor: ['#8bcb8f', '#f2e3b6', '#f2c299',
+                            '#f2935c', '#5fd9cd', '#f2d95c', '#f2b84b', '#f27979','#994BD9' ],    
+                        borderWidth: 0,
+                        hoverBorderColor: "black",
+                        hoverBorderWidth: 2,
+                        hoverBackgroundColor: 'rgba(154, 245, 140)',
+                        pointHoverRadius: 5
+                    }],
+                },
+                options: {
+                        title: {
+                            display: true,
+                                text: "Kilometers by type of transport (last 5 days)",
+                                fontColor: "#445c93",
+                                fontSize: 20,
+                        },
+                        legend: {
+                            position: "right",
+                                labels: {
+                                fontColor: "#445c93"
+                            },
+                            display: true,
+                        },
+    
+                        elements: {
+                            hitRadius: 3,
+                        }
+                }
+            })
+            
+        over_time_kms = JSON.parse({{over_time_kms | tojson}})
+        labels = JSON.parse({{ dates_label  | tojson}})
+
+        new Chart(document.getElementById("over_time_kms"), {
+                type: "line",
+                data:
+                {
+                    labels: labels,
+                    datasets: [
+                        {
+                        label: "Individual Kilometers (5 past days)",                            
+                        data: over_time_kms,
+                        fill: false,
+                        borderColor: '#f2d95c',
+                        lineTension: 0.1
+                        }
+                ]
+                },                    
+                options: {
+                    legend: {
+
+                        labels: {
+                                fontColor: "#445c93",
+                                fontSize: 15,
+                            },
+                        },
+                }
+            });   
+
+</script>
+{% endblock%}  
 {% endblock content %}
