@@ -24,7 +24,7 @@ class FerryForm(FlaskForm):
     choices=[('On Foot', 'On Foot'), ('By Car', 'By Car')])
   submit = SubmitField('Submit')  
 
-class MotorbikeForm(FlaskForm): #not yet done, see document
+class MotorbikeForm(FlaskForm):
   kms = FloatField('Kilometers', [InputRequired()])
   submit = SubmitField('Submit')
 
