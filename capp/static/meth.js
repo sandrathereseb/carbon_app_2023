@@ -101,3 +101,13 @@ function dropin8() {
         oldebestefar.style.display = "none"
     }
 }
+//button at developer page
+var goingDown = document.getElementById('downbtn')
+goingDown.addEventListener('click', (e) => {
+    godwn()
+})
+function godwn(){
+    window.scrollTo({ left: 0, top: document.body.scrollHeight, behavior: "smooth" });
+     
+     }
+

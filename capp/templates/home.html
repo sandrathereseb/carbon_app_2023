@@ -38,13 +38,13 @@
      </div>
 
    </div>
-   <div class="boottm">
-    <h2 class="NameTItle">Developers <i class="fa-solid fa-circle-down" style="color: white"></i></h2>
+   <div class="boottm" onclick="godwn()" >
+    <h2 class="NameTItle">Developers <i class="fa-solid fa-circle-down" style="color: white" ></i></h2>
    </div>
  </section>
 
  <!-- Developers -->
- <div class="dev">
+ <div class="dev" >
 
    <div class="person">
      <h2 class="NameTItle">Rune</h2>
@@ -101,4 +101,5 @@
    </div>
 
  </div>
+ <script src="{{ url_for('static', filename='meth.js')}}"></script>
  {% endblock content %}
