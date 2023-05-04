@@ -203,7 +203,27 @@ h4 {
   text-align: center;
 
 }
+.graphbox {
+display: flex;
+flex-direction: row;
+flex-wrap: wrap;
+justify-content: center;
 
+}
+
+.graphbox .box {
+height: 350px;
+width: 600px;
+outline-style: solid;
+outline-width: 4px;
+outline-color: #349370;
+background-color: #8bcb8f;
+margin: 30px;
+text-align: center;
+display: flex;
+justify-content: center;
+border-radius: 8px;
+}
 /*End container main menu*/
 /*Container buttons section main menu */
 .container_buttons_links_main_menu {
@@ -216,6 +236,7 @@ h4 {
 tr {
   border-bottom: #445c93;
 }
+
 
 /*End container buttons section main menu*/
 
